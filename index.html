@@ -95,6 +95,8 @@
 
     .week-planner { margin-top: 74px; scroll-margin-top: 24px; }.week-tabs { display: grid; grid-template-columns: repeat(7, minmax(120px, 1fr)); gap: 8px; margin-top: 26px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: thin; }.week-tab { min-height: 64px; padding: 10px 12px; border: 1px solid #deded6; border-radius: 6px; background: #fffdf9; color: #5a6863; cursor: pointer; text-align: left; }.week-tab:hover { border-color: #9fbeb5; }.week-tab.active { border-color: var(--jade); background: var(--jade); color: white; }.week-tab small { display: block; font-size: 11px; font-weight: 800; letter-spacing: .12em; }.week-tab strong { display: block; margin-top: 4px; font-size: 14px; white-space: nowrap; }.day-panel { display: grid; grid-template-columns: minmax(280px, .76fr) 1.4fr; gap: 35px; margin-top: 24px; padding: 26px 0 8px; border-top: 2px solid var(--red); }.day-visual { position: relative; min-height: 460px; overflow: hidden; background: #d9d1c5; }.day-visual::after { position: absolute; inset: 0; content: ""; background: linear-gradient(180deg, transparent 35%, rgba(26,21,17,.68)); }.day-visual img { width: 100%; height: 100%; object-fit: cover; }.day-visual-copy { position: absolute; right: 24px; bottom: 23px; left: 24px; z-index: 1; color: white; }.day-count { color: #ffe2aa; font-size: 12px; font-weight: 800; letter-spacing: .14em; }.day-title { margin: 6px 0 0; font-family: Georgia, "STKaiti", "KaiTi", serif; font-size: 37px; line-height: 1.05; }.day-zone { margin-top: 8px; color: rgba(255,255,255,.88); font-size: 13px; line-height: 1.6; }.day-content { min-width: 0; }.day-meta { display: flex; flex-wrap: wrap; gap: 9px; }.day-meta span { display: inline-flex; align-items: center; gap: 6px; padding: 7px 9px; border-radius: 4px; background: #e9f3ef; color: #376b60; font-size: 12px; font-weight: 700; }.day-meta svg { width: 14px; height: 14px; }.day-summary { margin: 19px 0 18px; color: #52635e; font-size: 14px; line-height: 1.75; }.day-stops { border-top: 1px solid var(--line); }.day-stop { display: grid; grid-template-columns: 64px minmax(130px, .75fr) 1.45fr auto; gap: 15px; align-items: start; padding: 15px 0; border-bottom: 1px solid var(--line); }.day-stop-time { color: var(--red); font-size: 13px; font-weight: 800; }.day-stop-meal { color: #59786e; font-size: 12px; font-weight: 800; }.day-stop-food { display: block; margin-top: 4px; color: var(--ink); font-size: 16px; font-weight: 800; }.day-stop-copy { color: var(--muted); font-size: 12px; line-height: 1.6; }.day-stop-cost { padding: 4px 7px; border-radius: 4px; background: #fff0e3; color: var(--red); font-size: 11px; font-weight: 800; white-space: nowrap; }
 
+    .photo-guide { margin-top: 78px; scroll-margin-top: 24px; }.photo-guide-intro { max-width: 540px; margin: 12px 0 0; color: var(--muted); font-size: 14px; line-height: 1.75; }.photo-filters { margin-top: 27px; }.photo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 17px; margin-top: 27px; }.photo-card { display: flex; min-width: 0; overflow: hidden; flex-direction: column; border: 1px solid var(--line); border-radius: 7px; background: var(--white); }.spot-image { aspect-ratio: 16 / 10; overflow: hidden; background: #d9d1c5; }.spot-image img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }.photo-card:hover .spot-image img { transform: scale(1.035); }.spot-body { display: flex; flex: 1; flex-direction: column; padding: 18px 19px 19px; }.spot-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }.spot-area { color: var(--red); font-size: 11px; font-weight: 800; letter-spacing: .11em; }.spot-time { display: inline-flex; flex: none; align-items: center; gap: 5px; color: #58746b; font-size: 11px; font-weight: 800; }.spot-time svg, .spot-warning svg { width: 14px; height: 14px; }.spot-title { margin: 10px 0 0; color: var(--ink); font-family: Georgia, "STKaiti", "KaiTi", serif; font-size: 26px; line-height: 1.12; }.spot-frame { margin: 12px 0 0; color: var(--muted); font-size: 12px; line-height: 1.7; }.spot-frame strong { display: inline-block; margin-right: 7px; color: var(--jade); font-size: 11px; letter-spacing: .08em; }.spot-pills { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 13px; }.spot-pill { padding: 5px 7px; border-radius: 4px; background: #e9f3ef; color: #417367; font-size: 11px; font-weight: 700; }.spot-warning { display: flex; align-items: flex-start; gap: 6px; margin: 14px 0 0; padding-top: 13px; border-top: 1px solid var(--line); color: #80665d; font-size: 11px; line-height: 1.6; }.spot-warning svg { flex: none; margin-top: 2px; color: var(--red); }
+
     .notice { display: grid; grid-template-columns: 50px 1fr; gap: 16px; margin: 70px 0 0; padding: 36px 0; border-top: 1px solid #ded4cb; background: transparent; }
     .notice-number { color: var(--jade); font-size: 18px; font-weight: 800; }.notice h3 { margin: 0; font-size: 20px; }.notice p { max-width: 650px; margin: 8px 0 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
     .footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 25px 0 40px; color: #7a8781; font-size: 12px; }.footer a { color: var(--jade); text-decoration: none; }
@@ -102,8 +104,8 @@
     dialog { width: min(520px, calc(100% - 32px)); padding: 0; border: 0; border-radius: 8px; background: var(--white); box-shadow: 0 26px 80px rgba(35,27,18,.28); }
     dialog::backdrop { background: rgba(29, 34, 30, .55); backdrop-filter: blur(3px); }.dialog-inner { padding: 32px; }.dialog-close { position: absolute; top: 15px; right: 15px; display: grid; width: 33px; height: 33px; place-items: center; border: 0; border-radius: 5px; background: #f6eee7; color: var(--ink); cursor: pointer; }.dialog-close svg { width: 17px; }.dialog-icon { font-size: 58px; }.dialog-area { margin-top: 12px; color: var(--red); font-size: 11px; font-weight: 800; letter-spacing: .12em; }.dialog-title { margin: 5px 0 0; font-family: Georgia, "STKaiti", "KaiTi", serif; font-size: 41px; }.dialog-intro { margin: 13px 0 0; color: var(--muted); font-size: 14px; line-height: 1.7; }.detail-list { display: grid; gap: 12px; margin-top: 25px; }.detail-row { display: grid; grid-template-columns: 80px 1fr; gap: 12px; padding: 13px 0; border-top: 1px solid var(--line); }.detail-label { color: var(--red); font-size: 12px; font-weight: 800; }.detail-value { color: #40554f; font-size: 13px; line-height: 1.55; }.detail-save { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 46px; margin-top: 24px; border: 0; border-radius: 5px; background: var(--red); color: white; cursor: pointer; font-weight: 800; }.detail-save svg { width: 17px; }
 
-    @media (max-width: 860px) { .route-strip { grid-template-columns: 1fr; }.food-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }.walk-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }.walk-stop:nth-child(2) { border-right: 0; }.walk-stop:nth-child(n+3) { border-top: 1px solid var(--line); padding-top: 25px; }.day-panel { grid-template-columns: 1fr; }.day-visual { min-height: 310px; }.day-content { max-width: 100%; } }
-    @media (max-width: 620px) { .topbar, .hero-content, .container { width: min(100% - 32px, 1180px); }.topbar { padding: 18px 0; }.brand { font-size: 19px; }.saved-button span { display: none; }.hero { min-height: 490px; }.hero::before { background: linear-gradient(90deg, rgba(51,19,16,.88), rgba(61,23,17,.42)); }.hero-content { padding: 112px 0 48px; }.hero-description { max-width: 340px; }.route-strip { display: block; margin-top: 0; padding: 23px 20px; border-radius: 0 0 7px 7px; }.route-steps { grid-template-columns: repeat(2, 1fr); margin-top: 23px; }.route-step { min-height: 90px; }.route-button { width: 100%; margin-top: 21px; }.section-head { margin-top: 55px; } h2 { font-size: 33px; }.food-grid { grid-template-columns: 1fr; gap: 12px; }.food-card { min-height: 346px; }.notice { margin-top: 46px; }.week-planner { margin-top: 55px; }.week-tabs { display: flex; gap: 8px; }.week-tab { flex: 0 0 118px; }.day-panel { gap: 21px; }.day-visual { min-height: 245px; }.day-title { font-size: 32px; }.day-stop { grid-template-columns: 52px 1fr auto; gap: 9px; }.day-stop-copy { grid-column: 2 / -1; margin-top: -3px; }.day-stop-cost { grid-column: 3; grid-row: 1; }.walk-guide { margin-top: 55px; }.walk-grid { grid-template-columns: 1fr; }.walk-stop, .walk-stop:not(:first-child) { min-height: 0; padding: 21px 0; border-right: 0; border-top: 1px solid var(--line); }.walk-stop:first-child { border-top: 0; }.footer { display: block; }.footer p + p { margin-top: 8px; } }
+    @media (max-width: 860px) { .route-strip { grid-template-columns: 1fr; }.food-grid, .photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }.walk-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }.walk-stop:nth-child(2) { border-right: 0; }.walk-stop:nth-child(n+3) { border-top: 1px solid var(--line); padding-top: 25px; }.day-panel { grid-template-columns: 1fr; }.day-visual { min-height: 310px; }.day-content { max-width: 100%; } }
+    @media (max-width: 620px) { .topbar, .hero-content, .container { width: min(100% - 32px, 1180px); }.topbar { padding: 18px 0; }.brand { font-size: 19px; }.saved-button span { display: none; }.hero { min-height: 490px; }.hero::before { background: linear-gradient(90deg, rgba(51,19,16,.88), rgba(61,23,17,.42)); }.hero-content { padding: 112px 0 48px; }.hero-description { max-width: 340px; }.route-strip { display: block; margin-top: 0; padding: 23px 20px; border-radius: 0 0 7px 7px; }.route-steps { grid-template-columns: repeat(2, 1fr); margin-top: 23px; }.route-step { min-height: 90px; }.route-button { width: 100%; margin-top: 21px; }.section-head { margin-top: 55px; } h2 { font-size: 33px; }.filter-row { align-items: flex-start; overflow: visible; }.filter-label { margin-top: 9px; }.filter-chips { flex-wrap: wrap; gap: 8px; }.food-grid, .photo-grid { grid-template-columns: 1fr; gap: 12px; }.food-card { min-height: 346px; }.notice { margin-top: 46px; }.week-planner, .photo-guide { margin-top: 55px; }.week-tabs { display: flex; gap: 8px; }.week-tab { flex: 0 0 118px; }.day-panel { gap: 21px; }.day-visual { min-height: 245px; }.day-title { font-size: 32px; }.day-stop { grid-template-columns: 52px 1fr auto; gap: 9px; }.day-stop-copy { grid-column: 2 / -1; margin-top: -3px; }.day-stop-cost { grid-column: 3; grid-row: 1; }.walk-guide { margin-top: 55px; }.walk-grid { grid-template-columns: 1fr; }.walk-stop, .walk-stop:not(:first-child) { min-height: 0; padding: 21px 0; border-right: 0; border-top: 1px solid var(--line); }.walk-stop:first-child { border-top: 0; }.footer { display: block; }.footer p + p { margin-top: 8px; } }
   </style>
 </head>
 <body>
@@ -133,6 +135,12 @@
         <div class="section-head"><div><span class="eyebrow">7 天慢慢吃</span><h2 id="week-plan-title">泉州一星期美食计划</h2></div><span class="count-label">古城、海边与县域各排一天</span></div>
         <div class="week-tabs" id="week-tabs" aria-label="选择行程天数"></div>
         <div class="day-panel" id="day-panel"></div>
+      </section>
+
+      <section class="photo-guide" id="photo-guide" aria-labelledby="photo-guide-title">
+        <div class="section-head"><div><span class="eyebrow">吃完去拍</span><h2 id="photo-guide-title">泉州出片机位</h2><p class="photo-guide-intro">每个区域都安排 3 个能顺路抵达的实拍点。按建议时段去、把衣服颜色和机位准备好，少走回头路。</p></div><span class="count-label" id="photo-count"></span></div>
+        <div class="filters photo-filters"><div class="filter-row"><span class="filter-label">区域</span><div class="filter-chips" id="photo-area-filters"></div></div></div>
+        <div class="photo-grid" id="photo-grid"></div>
       </section>
 
       <section aria-labelledby="find-food-title">
@@ -182,7 +190,11 @@
       ['gucheng-huasheng', '花生汤', '🥜', '甜品', '¥8-16', '钟楼 / 开元寺周边', '花生煮到软糯，甜度比四果汤更温和。', '温热甜口', '花生汤 + 油条', '早餐吃更合适，下午不要和甜糕叠加。', '含花生，血糖管理者选少糖。'],
       ['gucheng-curou', '炸醋肉', '🍖', '小吃', '¥18-30', '古城巷子里的闽南菜档', '酸香腌制后炸得酥脆，是面线糊的经典搭档。', '咸香小食', '炸醋肉小份', '搭配汤类，不建议单吃大份。', '油炸且含猪肉，肠胃敏感者少量。'],
       ['gucheng-yujuan', '鱼卷汤', '🍲', '早餐', '¥15-26', '东街连到钟楼一带', '鱼浆做成卷后切片入汤，鲜味干净。', '鲜味热汤', '鱼卷汤 + 小份米饭', '先喝原汤，再看是否需要蘸料。', '鱼类过敏者请避开。'],
-      ['gucheng-shihua', '石花膏', '🧊', '甜品', '¥8-16', '西街与东街甜品铺', '海藻冻配糖水，口感比四果汤更轻。', '清凉解腻', '石花膏 + 阿达子', '中午后吃最合适，选少糖。', '部分配料含花生碎。']
+      ['gucheng-shihua', '石花膏', '🧊', '甜品', '¥8-16', '西街与东街甜品铺', '海藻冻配糖水，口感比四果汤更轻。', '清凉解腻', '石花膏 + 阿达子', '中午后吃最合适，选少糖。', '部分配料含花生碎。'],
+      ['gucheng-rouyan', '肉燕汤', '🥟', '早餐', '¥16-28', '府文庙至钟楼一带', '薄而有韧性的燕皮裹肉馅，汤头比面线糊清爽。', '轻早餐', '肉燕汤 + 小菜', '和面线糊分在不同早晨吃，才吃得出区别。', '含猪肉和面粉。'],
+      ['gucheng-haolibing', '古城海蛎饼', '🦪', '小吃', '¥6-12', '古城菜市场外围', '米浆、海蛎和韭菜现炸，边缘酥脆才值得等。', '巷口现炸', '海蛎饼一只', '最好让店家现炸，拿到手就吃。', '贝类过敏者请避开。'],
+      ['gucheng-caigui', '古早菜粿', '🥬', '小吃', '¥8-15', '府文庙周边小食摊', '米皮包萝卜丝或韭菜馅，煎过后有淡淡米香。', '清爽咸点', '菜粿一枚 + 甜辣酱', '适合下午垫胃，不要和肉粽同餐。', '部分馅料可能含虾皮或肉末。'],
+      ['gucheng-xianfan', '古城咸饭', '🍚', '主食', '¥12-22', '钟楼周边家常小馆', '香菇、肉末和米饭一起焖香，是比肉粽更干爽的主食。', '家常午餐', '咸饭小份 + 青菜', '午餐二选一：咸饭或肉粽，不要双主食。', '部分店会使用猪油或海鲜干货。']
     ]);
     addRegionalFoods('西街', [
       ['xijie-curou', '古早炸醋肉', '🍖', '小吃', '¥18-30', '西街 / 小西埕附近', '西街适合把醋肉当作多样小吃里的咸口一站。', '古早炸物', '醋肉小份 + 甜辣酱', '两个人分一份，留胃给润饼和海蛎煎。', '油炸食品，建议趁热吃。'],
@@ -191,7 +203,11 @@
       ['xijie-huasheng', '古早花生汤', '🥜', '甜品', '¥8-16', '西街北段', '软烂花生配甜汤，走累后坐下来喝一碗。', '热甜汤', '花生汤小碗', '如果已吃满煎糕，这一站就选半糖。', '花生过敏者不能吃。'],
       ['xijie-yujuan', '鱼卷拼盘', '🐟', '小吃', '¥18-32', '开元寺周边小吃档', '鱼卷切片后可煎可煮，适合和朋友分着尝。', '海味小吃', '鱼卷 + 鱼羹', '选一份即可，不必再点海鲜主食。', '含鱼浆和淀粉。'],
       ['xijie-haolibing', '海蛎饼', '🦪', '小吃', '¥6-12', '西街傍晚摊位', '外层炸得酥，里面是海蛎和韭菜的鲜味。', '现炸小食', '海蛎饼一只', '最好傍晚现炸时买，不要放凉。', '贝类过敏者不要尝试。'],
-      ['xijie-shaochuan', '闽南夜间烤物', '🍢', '正餐', '¥35-65', '西街夜间摊位', '夜里把烤海鲜、烤豆干和蔬菜组合起来，适合慢逛。', '夜游加餐', '三样烤物 + 一份汤', '少点多样，不要和姜母鸭安排同一晚。', '海鲜类按当天食材确认。']
+      ['xijie-shaochuan', '闽南夜间烤物', '🍢', '正餐', '¥35-65', '西街夜间摊位', '夜里把烤海鲜、烤豆干和蔬菜组合起来，适合慢逛。', '夜游加餐', '三样烤物 + 一份汤', '少点多样，不要和姜母鸭安排同一晚。', '海鲜类按当天食材确认。'],
+      ['xijie-caigui', '西街菜粿', '🥬', '小吃', '¥8-15', '西街北段支巷', '软糯米皮包着萝卜丝，煎香后是很适合走路的一口。', '巷弄咸点', '菜粿一枚', '和润饼二选一，避免同餐都是粉皮。', '馅料有时会加虾皮，先问清。'],
+      ['xijie-shuiwan', '深沪水丸汤', '🍥', '早餐', '¥15-28', '西街通往开元寺路段', '鱼浆丸子弹牙，汤头清亮，适合早上开胃。', '鲜汤早餐', '水丸汤 + 小菜', '早上吃它，当天午餐就换成非鱼类。', '鱼类过敏者慎点。'],
+      ['xijie-maci', '花生麻糍', '🍡', '甜品', '¥8-15', '小西埕周边茶点铺', '现做麻糍裹着花生糖粉，口感软糯又很顶饱。', '茶后甜点', '麻糍两枚分食', '一份分两人，吃完再去拍照更轻松。', '含糯米和花生。'],
+      ['xijie-douhua', '古早豆花', '🍮', '甜品', '¥8-14', '西街南段甜品铺', '豆香干净、甜度温和，是满煎糕之外更轻的甜口。', '轻甜收尾', '豆花少糖', '已吃花生汤时改点豆花，甜品不重复。', '部分店会添加花生碎或糖浆。']
     ]);
     addRegionalFoods('中山路', [
       ['zhongshan-xianfan', '闽南咸饭', '🍚', '主食', '¥12-22', '中山中路餐馆', '米饭吸足香菇和肉香，配小菜就是一顿。', '家常主食', '咸饭 + 一份青菜', '中午吃最合适，不要再配完整肉粽。', '部分店铺会用猪油或海鲜干货。'],
@@ -200,7 +216,11 @@
       ['zhongshan-yutoubing', '芋头饼', '🥔', '小吃', '¥8-16', '中山中路小吃铺', '芋泥里带咸甜馅，外皮炸得酥。', '咸甜交界', '芋头饼一只', '下午加餐一只足够。', '多为油炸，含芋头和可能的肉馅。'],
       ['zhongshan-ludou', '绿豆饼', '🫓', '甜品', '¥10-25', '中山路老字号点心铺', '酥皮绿豆馅适合带走，也适合配茶。', '伴手礼', '现买两枚尝鲜', '买散装时问清保质期。', '含糖和油脂，适量品尝。'],
       ['zhongshan-siguo', '古早四果汤', '🍧', '甜品', '¥8-18', '中山中路甜品档', '可自选石花、阿达子、蜜饯和红豆。', '自选甜水', '石花 + 阿达子 + 红豆', '第一次选少糖、少蜜饯。', '糖分较高。'],
-      ['zhongshan-luwei', '闽南卤味拼盘', '🥓', '正餐', '¥30-55', '中山路家常小馆', '卤肉、豆干和卤蛋适合多人夹着吃。', '下饭卤味', '卤味小拼 + 青菜', '作为配菜，不要单独当一顿大餐。', '口味偏咸，注意搭配主食。']
+      ['zhongshan-luwei', '闽南卤味拼盘', '🥓', '正餐', '¥30-55', '中山路家常小馆', '卤肉、豆干和卤蛋适合多人夹着吃。', '下饭卤味', '卤味小拼 + 青菜', '作为配菜，不要单独当一顿大餐。', '口味偏咸，注意搭配主食。'],
+      ['zhongshan-rouyan', '肉燕拌面', '🥟', '主食', '¥18-30', '中山中路老店附近', '肉燕配干拌面，适合想吃主食又不想再点粽子的时候。', '一碗顶饱', '肉燕 + 拌面小份', '食量普通的人两人分一份更舒服。', '含猪肉、面粉和调味油。'],
+      ['zhongshan-wuxiang', '豆皮炸五香', '🥟', '小吃', '¥10-18', '中山中路小食档', '豆皮卷肉馅切段炸香，蘸甜辣酱是经典吃法。', '香脆咸口', '炸五香半份', '下午买半份即可，不要同吃醋肉。', '油炸且常含猪肉。'],
+      ['zhongshan-caigui', '萝卜丝菜粿', '🥬', '小吃', '¥8-15', '中山路骑楼下小摊', '萝卜丝馅清爽，适合在重口主食之间换口味。', '轻口小食', '菜粿一枚', '建议少甜辣酱，更能吃出米皮香。', '部分店家会加入虾皮。'],
+      ['zhongshan-douhua', '石磨豆花', '🍮', '甜品', '¥8-14', '中山南路甜品铺', '嫩豆花搭配红糖水，比四果汤更适合晚上。', '温柔甜口', '豆花半糖', '饭后半小时再吃，别把甜品当正餐。', '糖浆可选择减量。']
     ]);
     addRegionalFoods('水门巷', [
       ['shuimen-yazhou', '鸭粥', '🍲', '早餐', '¥15-28', '水门巷周边', '米粥带着鸭肉香，属于比姜母鸭更轻的选择。', '暖胃粥品', '鸭粥 + 小菜', '早上或深夜吃都合适。', '鸭肉和汤底油脂因店而异。'],
@@ -209,7 +229,11 @@
       ['shuimen-niurou', '牛肉羹', '🥩', '早餐', '¥15-28', '水门巷入口一带', '水门巷的牛肉羹适合和鸭粥错开不同天吃。', '热汤选择', '牛肉羹小碗', '若再点主食，选择半份。', '牛肉部位可提前问。'],
       ['shuimen-chaomian', '炒面线', '🍝', '主食', '¥18-32', '水门巷附近闽南菜馆', '面线炒到干香，适合和海鲜、青菜一起分享。', '干香主食', '炒面线小份 + 青菜', '两人分食，避免和肉粽重叠。', '常含海鲜干货或猪油。'],
       ['shuimen-yujuan', '鱼卷汤', '🐟', '小吃', '¥15-26', '水门巷巷口', '清汤鱼卷是重口晚餐前的好过渡。', '轻口海味', '鱼卷汤一碗', '配姜母鸭前不要加太多主食。', '鱼类过敏者请避开。'],
-      ['shuimen-wuxiang', '炸五香', '🥟', '小吃', '¥10-18', '水门巷傍晚摊位', '豆皮卷肉馅炸香，切段后蘸甜辣酱。', '傍晚小食', '炸五香半份', '适合两人分，别与醋肉同时点。', '油炸且多为猪肉馅。']
+      ['shuimen-wuxiang', '炸五香', '🥟', '小吃', '¥10-18', '水门巷傍晚摊位', '豆皮卷肉馅炸香，切段后蘸甜辣酱。', '傍晚小食', '炸五香半份', '适合两人分，别与醋肉同时点。', '油炸且多为猪肉馅。'],
+      ['shuimen-rouyan', '水门肉燕汤', '🥟', '早餐', '¥16-28', '水门巷通民权路一带', '燕皮细薄、汤底清爽，适合大餐前的轻口一站。', '清汤暖胃', '肉燕汤 + 小菜', '留给想避开海鲜的一餐。', '含猪肉和面粉。'],
+      ['shuimen-haolijian', '脆边海蛎煎', '🦪', '小吃', '¥18-32', '水门巷夜食区', '海蛎和鸡蛋煎到边缘焦香，适合傍晚一份分食。', '夜食海味', '海蛎煎一份', '点“脆边”，不建议与海鲜粥同餐。', '贝类过敏者不要尝试。'],
+      ['shuimen-huasheng', '花生汤', '🥜', '甜品', '¥8-16', '水门巷口甜汤铺', '花生煮得软烂，是姜母鸭后更温和的甜口收尾。', '热甜汤', '花生汤小碗', '和麻糍分开吃，糖和糯米都容易顶胃。', '含花生，建议选少糖。'],
+      ['shuimen-caigui', '煎菜粿', '🥬', '小吃', '¥8-15', '水门巷巷口', '米皮煎出焦边，萝卜丝馅让油香不那么厚重。', '清爽小食', '煎菜粿一枚', '适合等位时垫胃，不要先吃太多。', '馅料可能含虾皮。']
     ]);
     addRegionalFoods('关岳庙', [
       ['guanyue-shihua', '石花膏', '🧊', '甜品', '¥8-16', '关岳庙口', '石花做成的清凉冻，适合四果汤的替代选项。', '清凉甜品', '石花膏 + 少糖', '如果刚吃过四果汤，这个换到另一天。', '部分小料含花生。'],
@@ -218,7 +242,11 @@
       ['guanyue-huasheng', '花生汤配麻糍', '🥜', '甜品', '¥12-22', '关岳庙甜品铺', '热花生汤和软糯麻糍适合雨天或走累后。', '传统甜口', '花生汤小碗 + 麻糍一枚', '两种都顶饱，建议分食。', '含花生和糯米。'],
       ['guanyue-haolibing', '现炸海蛎饼', '🦪', '小吃', '¥6-12', '关岳庙周边傍晚摊', '海蛎、韭菜和米浆炸到边缘酥脆。', '现炸海味', '海蛎饼一只', '等现炸，不买久放的。', '贝类过敏者请避开。'],
       ['guanyue-maci', '花生麻糍', '🍡', '甜品', '¥8-15', '关岳庙附近茶点铺', '糯米团裹花生糖粉，是一口就很饱的甜点。', '闽南茶点', '麻糍两枚分食', '留到下午茶，不要紧接正餐。', '含糯米和花生。'],
-      ['guanyue-shaoxiancao', '烧仙草', '🍮', '甜品', '¥10-20', '关岳庙至中山路段', '偏草本凉感的甜品，适合替代重甜四果汤。', '清凉甜水', '烧仙草少糖', '夏天更合适，配料不要全加。', '糖水和奶制小料可自行选择。']
+      ['guanyue-shaoxiancao', '烧仙草', '🍮', '甜品', '¥10-20', '关岳庙至中山路段', '偏草本凉感的甜品，适合替代重甜四果汤。', '清凉甜水', '烧仙草少糖', '夏天更合适，配料不要全加。', '糖水和奶制小料可自行选择。'],
+      ['guanyue-mianxian', '醋肉面线糊', '🥣', '早餐', '¥12-22', '关岳庙至中山路段', '细面线配一小份醋肉，酸香把汤底提得更有层次。', '经典搭档', '面线糊小碗 + 醋肉', '不要再加油条，留胃给午后小吃。', '含猪肉、油炸配料，部分汤底含海鲜。'],
+      ['guanyue-xianfan', '闽南咸饭', '🍚', '主食', '¥12-22', '关岳庙附近家常小馆', '一碗咸饭配清汤，是逛庙后坐下来吃饭的稳妥选择。', '家常午餐', '咸饭小份 + 清汤', '与肉粽二选一，当作当天主食即可。', '可能含猪油、海鲜干货。'],
+      ['guanyue-runbing', '关岳庙润饼', '🌯', '小吃', '¥12-20', '庙口至中山路小吃档', '薄饼卷蔬菜、肉松和花生碎，适合边走边吃。', '走拍小食', '少甜酱润饼', '拍照前吃它比油炸小食更不容易腻。', '含花生、肉松，香菜可提前说。'],
+      ['guanyue-ludou', '手工绿豆饼', '🫓', '甜品', '¥10-25', '关岳庙周边点心铺', '酥皮薄、绿豆馅细，适合带去下一个景点慢慢吃。', '可带走', '买两枚尝鲜', '要买伴手礼就问生产日期和保存方式。', '含糖、油脂和面粉。']
     ]);
     addRegionalFoods('东街', [
       ['dongjie-mianxian', '古早面线糊', '🥣', '早餐', '¥8-16', '东街早餐铺', '东街早餐铺密度高，适合把面线糊放在第一站。', '清晨开胃', '面线糊 + 油条', '八点前后选择更多，先点小碗。', '常含海鲜、猪肉配料。'],
@@ -227,7 +255,11 @@
       ['dongjie-niurou', '牛肉咸饭', '🥩', '主食', '¥22-38', '东街周边', '牛肉配咸饭是食量大时的稳妥组合。', '饱腹午餐', '牛肉羹 + 咸饭小份', '只适合把它当一天的主餐。', '牛肉和油脂含量较高。'],
       ['dongjie-maci', '芝麻麻糍', '🍡', '甜品', '¥8-15', '东街点心摊', '软糯外皮配芝麻或花生粉，适合当一口甜点。', '软糯茶点', '麻糍一到两枚', '现做更好吃，不要买太多放久。', '含糯米和坚果粉。'],
       ['dongjie-yuanxiao', '元宵丸', '🍡', '甜品', '¥12-20', '东街传统甜品铺', '小汤圆配甜汤，口感比麻糍更轻。', '热甜汤圆', '元宵丸小碗', '晚上吃更暖，白天别和花生汤同点。', '含糯米，注意甜度。'],
-      ['dongjie-ludou', '绿豆饼', '🫓', '甜品', '¥10-25', '东街伴手礼铺', '酥皮包绿豆馅，适合走之前买作伴手礼。', '可带走', '现买两枚尝鲜', '买盒装时核对生产日期。', '含糖和油脂。']
+      ['dongjie-ludou', '绿豆饼', '🫓', '甜品', '¥10-25', '东街伴手礼铺', '酥皮包绿豆馅，适合走之前买作伴手礼。', '可带走', '现买两枚尝鲜', '买盒装时核对生产日期。', '含糖和油脂。'],
+      ['dongjie-haolibing', '东街海蛎饼', '🦪', '小吃', '¥6-12', '东街北段傍晚摊', '海蛎和韭菜裹在米浆里现炸，口感要趁热。', '现炸海味', '海蛎饼一只', '下午吃一只即可，别和海蛎煎叠加。', '贝类过敏者请避开。'],
+      ['dongjie-wuxiang', '东街炸五香', '🥟', '小吃', '¥10-18', '东街传统小食摊', '豆皮裹肉馅炸到干香，配甜辣酱更有闽南味。', '酥香咸点', '炸五香半份', '两个人分一份，适合走去钟楼前垫胃。', '油炸且通常含猪肉。'],
+      ['dongjie-caigui', '萝卜丝菜粿', '🥬', '小吃', '¥8-15', '东街早餐与小食铺', '萝卜丝馅带一点清甜，是东街小吃里较轻的一款。', '轻口米点', '菜粿一枚', '早餐和下午都合适，少蘸酱。', '部分馅料会加虾皮。'],
+      ['dongjie-huasheng', '东街花生汤', '🥜', '甜品', '¥8-16', '东街传统甜品铺', '软花生配热甜汤，适合承天寺出来后坐一会儿。', '古早甜汤', '花生汤小碗', '甜品和麻糍选一个，不要双倍糯甜。', '含花生，建议少糖。']
     ]);
     addRegionalFoods('蟳埔', [
       ['xunpu-yujuan', '蟳埔鱼卷汤', '🐟', '早餐', '¥18-30', '蟳埔渔村入口', '鱼卷配清汤，适合到海边前先吃一碗热的。', '渔村早餐', '鱼卷汤 + 小菜', '海边风大，早餐建议吃热汤。', '鱼类过敏者请避开。'],
@@ -237,7 +269,11 @@
       ['xunpu-shihua', '石花膏', '🧊', '甜品', '¥8-16', '蟳埔海边饮品档', '海藻冻配糖水，走完海边后最解腻。', '海风甜水', '石花膏少糖', '与海鲜午餐间隔半小时更舒服。', '部分小料可能含花生。'],
       ['xunpu-haolibing', '现炸海蛎饼', '🦪', '小吃', '¥6-12', '蟳埔傍晚摊位', '米浆裹海蛎和韭菜现炸，适合傍晚买一只。', '酥脆海味', '海蛎饼一只', '不要和海蛎煎安排在同一餐。', '贝类过敏者请避开。'],
       ['xunpu-qingzheng', '清蒸时令海鲜', '🦐', '正餐', '¥100-180', '蟳埔周边海鲜排档', '清蒸最能吃到当天海鲜的新鲜度，点菜要克制。', '午餐核心', '一鱼一贝一蔬菜', '两人三样足够，先问清单价和做法。', '海鲜价格与食材按当天为准。'],
-      ['xunpu-zhaxia', '炸虾枣', '🦐', '小吃', '¥12-22', '蟳埔周边小食摊', '虾仁和肉末做成小丸子炸香，是适合分食的咸点。', '闽南炸物', '虾枣小份', '与清蒸海鲜错开，别让一餐全是海味。', '多含虾、猪肉和油炸成分。']
+      ['xunpu-zhaxia', '炸虾枣', '🦐', '小吃', '¥12-22', '蟳埔周边小食摊', '虾仁和肉末做成小丸子炸香，是适合分食的咸点。', '闽南炸物', '虾枣小份', '与清蒸海鲜错开，别让一餐全是海味。', '多含虾、猪肉和油炸成分。'],
+      ['xunpu-xiaoguan', '白灼小管', '🦑', '正餐', '¥48-88', '蟳埔周边海鲜排档', '小管简单白灼最能吃到鲜甜，蘸酱应另装不盖味。', '当日海味', '白灼小管 + 青菜', '两人点一份即可，先确认大小和单价。', '海鲜过敏者请避开，价格随当天食材变化。'],
+      ['xunpu-zhenghao', '清蒸海蛎', '🦪', '正餐', '¥38-68', '蟳埔渔村海鲜档', '清蒸只加姜丝葱花，适合和海边散步连成一顿。', '原味鲜甜', '清蒸海蛎一份', '和海蛎煎分开点，别一餐重复同一种贝类。', '贝类过敏者不要尝试。'],
+      ['xunpu-yufan', '闽南鱼饭', '🐟', '主食', '¥28-52', '蟳埔渔村内家常海鲜店', '当天鲜鱼煮熟放凉后吃，鱼肉紧实，配酱油水很有渔村感。', '渔村特色', '鱼饭小份 + 青菜', '先问当天是什么鱼，第一次选小份尝鲜。', '含鱼类，刺较多需慢吃。'],
+      ['xunpu-menxian', '海鲜焖面线', '🍜', '主食', '¥35-68', '蟳埔海边小馆', '面线吸满海鲜汤汁，适合海鲜吃得不多的午餐。', '一锅鲜味', '海鲜焖面线小份', '和海鲜粥二选一，避免一餐双主食。', '常含虾、贝类或鱼类，点前确认。']
     ]);
 
     const route = [
@@ -252,14 +288,38 @@
       { label: 'D6', short: '惠安海岸', title: '惠安崇武：海风配鱼卷和海蛎', zone: '崇武古城 - 海岸线', transport: '建议自驾 / 包车', budget: '人均 ¥150-240', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Oyster_omelette.JPG/960px-Oyster_omelette.JPG', summary: '这天距离更远，安排要松。先看海再吃饭，海鲜类提前问价，回市区不用再加一顿大餐。', stops: [['08:30','早餐','地瓜粉团','出发前在市区或惠安镇上吃热食。','¥15-25'],['11:00','小吃','鱼卷 + 鱼羹','崇武古城附近先吃鱼卷，口味清爽。','¥25-40'],['13:00','午餐','清蒸海鲜','海边午餐点三样足够：贝类、鱼、青菜。','¥100-180'],['16:00','下午茶','海蛎饼','刚炸好最好吃，买小份边走边吃。','¥8-15'],['19:00','晚餐','惠安家常菜','返程前吃简单一餐，别再堆海鲜。','¥35-60']] },
       { label: 'D7', short: '南安收官', title: '南安收官：牛肉、鸡爪和麻糍', zone: '南安市区 - 洪濑 / 英都方向', transport: '自驾或打车衔接', budget: '人均 ¥100-160', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Quanzhou-style_Kiu%E2%81%BF-b%C3%B3-ah_%28Ginger_Duck%29_at_Yipin_Xiangqing_Restaurant%2C_Beijing_%2820240908174515%29.jpg/960px-Quanzhou-style_Kiu%E2%81%BF-b%C3%B3-ah_%28Ginger_Duck%29_at_Yipin_Xiangqing_Restaurant%2C_Beijing_%2820240908174515%29.jpg', summary: '最后一天不再追求“多”，用牛肉汤、洪濑鸡爪和麻糍收官。适合买伴手礼，也给胃留一点余地。', stops: [['08:30','早餐','牛肉汤 + 米粉','先吃清汤系早餐，胃会舒服很多。','¥20-35'],['11:30','午餐','闽南家常菜','点一荤一素一汤，避开前几天重复菜。','¥35-60'],['14:30','伴手礼','洪濑鸡爪','带走前问清是否需要冷藏和保质期。','¥25-50'],['16:00','甜口','英都麻糍','选现做小份，花生馅很顶饱。','¥10-20'],['18:30','收官','清淡面食或粥','返程前吃轻一点，别再挑战重油重辣。','¥25-45']] }
     ];
+    const photoSpots = [
+      { area: '古城', theme: '古建轴线', name: '开元寺东西塔', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/The_courtyard_of_Quanzhou_Kaiyuan_Temple_20170727.jpg/1280px-The_courtyard_of_Quanzhou_Kaiyuan_Temple_20170727.jpg', time: '08:00-09:30', frame: '在大雄宝殿前沿中轴取景，让人物退到香炉外侧，檐角和两塔都留一点呼吸。', outfit: '米白 / 墨绿', warning: '寺内请轻声；不要跨越警戒线，也别挡住参拜动线。' },
+      { area: '古城', theme: '城市地标', name: '钟楼环岛', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/%E6%B3%89%E5%B7%9E%E9%92%9F%E6%A5%BC.jpg/1280px-%E6%B3%89%E5%B7%9E%E9%92%9F%E6%A5%BC.jpg', time: '日落前 40 分钟', frame: '站在人行道内侧用 2 倍镜压缩钟楼和车流；人物站画面下三分之一更显建筑高度。', outfit: '砖红 / 牛仔蓝', warning: '车流密集，不能进入环岛或车道；中午逆光和反光都很强。' },
+      { area: '古城', theme: '书院红墙', name: '府文庙大成殿', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Quanzhou_Confucian_Temple_Dacheng_Hall_2019_%282%29.jpg/1280px-Quanzhou_Confucian_Temple_Dacheng_Hall_2019_%282%29.jpg', time: '09:30 或 16:30', frame: '在台阶侧边拍斜向透视，人物不要站正中，留出红墙、屋脊和石阶层次。', outfit: '浅卡其 / 黑色', warning: '拍摄前确认当日开放区域，雨后石阶湿滑。' },
+      { area: '西街', theme: '骑楼街景', name: '西街骑楼长街', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/20230130_West_Street%2C_Quanzhou.jpg/1280px-20230130_West_Street%2C_Quanzhou.jpg', time: '07:30-09:00', frame: '朝街道纵深拍，把骑楼柱子当引导线；人物靠一侧柱边，画面会比站街中央干净。', outfit: '白衬衫 / 深蓝', warning: '十点后人流明显增加，想拍空景尽量早到。' },
+      { area: '西街', theme: '远望双塔', name: '西街远望双塔', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Xi_Jie_%28West_Street%29%2C_Quanzhou_Aug_2023.jpg/1280px-Xi_Jie_%28West_Street%29%2C_Quanzhou_Aug_2023.jpg', time: '16:30-18:00', frame: '沿街取较低机位，把屋檐压在前景、双塔留在远处；用 1 倍镜更有街景感。', outfit: '浅灰 / 酒红', warning: '不要为避人群站到商铺门口或机动车道。' },
+      { area: '西街', theme: '寺院屋檐', name: '开元寺大雄宝殿', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Quanzhou_Kaiyuan_Temple_-_%E5%A4%A7%E9%9B%84%E5%AE%9D%E6%AE%BF_20170727.jpg/1280px-Quanzhou_Kaiyuan_Temple_-_%E5%A4%A7%E9%9B%84%E5%AE%9D%E6%AE%BF_20170727.jpg', time: '08:30-10:00', frame: '用殿前台阶作前景，镜头略抬带出屋檐；人站侧边看向建筑，画面更自然。', outfit: '米色 / 深棕', warning: '不要使用闪光灯或影响香客，室内外明暗反差大。' },
+      { area: '中山路', theme: '石门光影', name: '清净寺石门', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Quanzhou_Qingjing_Si_20120229-02.jpg/1280px-Quanzhou_Qingjing_Si_20120229-02.jpg', time: '15:30-17:00', frame: '让石门形成天然画框，人物退后半步避开门洞正中，用侧脸和墙面纹理讲故事。', outfit: '黑色 / 亚麻白', warning: '尊重宗教场所规则；避免大声摆拍和穿着过于暴露。' },
+      { area: '中山路', theme: '海丝红墙', name: '天后宫山门', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Quanzhou_-_Tianhou_Gong_-_DSCF8655.JPG/1280px-Quanzhou_-_Tianhou_Gong_-_DSCF8655.JPG', time: '09:00-10:30', frame: '从山门侧方取对角线，让红墙延伸到画面深处；人物走动抓拍比站姿更松弛。', outfit: '青绿 / 米白', warning: '香客较多时不占正中通道，拍完及时让位。' },
+      { area: '中山路', theme: '古城遗址', name: '德济门遗址', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/20230129_Remains_of_Deji_Gate_01.jpg/1280px-20230129_Remains_of_Deji_Gate_01.jpg', time: '16:00-17:30', frame: '使用广角保留遗址尺度，人物站在边缘和城砖形成大小对比，别把背景塞满。', outfit: '卡其 / 深绿', warning: '注意参观时段和台阶高差，不能攀爬遗址。' },
+      { area: '水门巷', theme: '城门遗韵', name: '德济门城砖', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/20230129_Remains_of_Deji_Gate_02.jpg/1280px-20230129_Remains_of_Deji_Gate_02.jpg', time: '15:30-17:30', frame: '靠近纹理墙面拍半身，用侧逆光带出城砖质感；让人物与墙面保持半米距离。', outfit: '灰蓝 / 白色', warning: '遗址区域请遵守围栏和导览提示，雨天别走湿滑边缘。' },
+      { area: '水门巷', theme: '碑刻细节', name: '天后宫赑屃碑', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Quanzhou_-_Tian_Hou_Gong_-_bixi_-_DSCF8514.JPG/1280px-Quanzhou_-_Tian_Hou_Gong_-_bixi_-_DSCF8514.JPG', time: '10:00-11:00', frame: '用 2 倍镜拍局部和人物侧影，突出碑刻、木构和红色空间，画面不要太满。', outfit: '藏青 / 米色', warning: '不触摸文物，不在碑前长时间占位。' },
+      { area: '水门巷', theme: '庙宇檐角', name: '水门巷至天后宫街口', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Quanzhou_-_Tian_Hou_Gong_-_bixi_-_DSCF8516.JPG/1280px-Quanzhou_-_Tian_Hou_Gong_-_bixi_-_DSCF8516.JPG', time: '17:00-18:00', frame: '从巷口向屋檐方向仰拍，人物只占下方小面积，红色建筑会成为主角。', outfit: '白色 / 靛蓝', warning: '巷道较窄，别停在出入口拍太久。' },
+      { area: '关岳庙', theme: '香火门楼', name: '通淮关岳庙门楼', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Quanzhou_Tonghuai_Guanyue_Miao_2005-08-11.jpg/1280px-Quanzhou_Tonghuai_Guanyue_Miao_2005-08-11.jpg', time: '08:30-10:00', frame: '在门前侧边留出匾额和飞檐，人物不要正对镜头，回头或行走更有氛围。', outfit: '墨绿 / 米白', warning: '香火旺时以参拜动线优先，不在主入口驻留。' },
+      { area: '关岳庙', theme: '屋脊层次', name: '通淮关岳庙正殿', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Quanzhou_Tonghuai_Guanyue_Miao_20120229-02.jpg/1280px-Quanzhou_Tonghuai_Guanyue_Miao_20120229-02.jpg', time: '15:30-16:30', frame: '站在殿外偏侧，用屋脊做画面上沿，人物低头整理衣摆，氛围会更安静。', outfit: '深棕 / 浅灰', warning: '殿内拍摄先看现场规定，不能开闪光灯。' },
+      { area: '关岳庙', theme: '红墙木构', name: '关岳庙檐下细节', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Quanzhou_Tonghuai_Guanyue_Miao_20120229-03.jpg/1280px-Quanzhou_Tonghuai_Guanyue_Miao_20120229-03.jpg', time: '阴天全天', frame: '阴天适合拍红墙和木构近景；用人像模式虚化远景，人物离背景一臂距离即可。', outfit: '黑色 / 驼色', warning: '不要倚靠建筑构件，也不要把香火区域当布景。' },
+      { area: '东街', theme: '寺院庭院', name: '承天寺庭院', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Quanzhou_Chengtian_Si_20120301-03.jpg/1280px-Quanzhou_Chengtian_Si_20120301-03.jpg', time: '08:00-09:30', frame: '借庭院树影做前景，人物沿石板路慢走，连续拍三四张比摆拍更自然。', outfit: '亚麻白 / 青绿', warning: '寺内保持安静，不要跨进草坪或封闭区域。' },
+      { area: '东街', theme: '古寺对称', name: '承天寺殿前', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Quanzhou_Chengtian_Si_20120301-04.jpg/1280px-Quanzhou_Chengtian_Si_20120301-04.jpg', time: '16:00-17:30', frame: '对称构图时把人物站在中轴略偏一侧，用低一点的机位带出檐口层次。', outfit: '深蓝 / 米白', warning: '香客多时放弃中轴机位，改拍侧面细节。' },
+      { area: '东街', theme: '老城交汇', name: '东街钟楼', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/%E6%B3%89%E5%B7%9E%E9%92%9F%E6%A5%BC.jpg/1280px-%E6%B3%89%E5%B7%9E%E9%92%9F%E6%A5%BC.jpg', time: '蓝调时刻', frame: '傍晚开灯后用 1 倍镜拍街口纵深，人物停在人行道一侧，留出钟楼上方天空。', outfit: '红棕 / 黑色', warning: '遵守红绿灯，别为拍照停到车流中间。' },
+      { area: '蟳埔', theme: '簪花围', name: '蟳埔簪花围街巷', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Xunpu_Village_1.jpg/1280px-Xunpu_Village_1.jpg', time: '08:00-10:00', frame: '簪花造型适合半身和回头照，站在窄巷边缘，让花围与蚝壳墙同时入镜。', outfit: '素色上衣 / 花围', warning: '造型、拍摄与交通费用先问清；巷道窄，别堵住住户出入。' },
+      { area: '蟳埔', theme: '蚝壳厝', name: '蚝壳厝墙面', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Xunpu_Village_5.jpg/1280px-Xunpu_Village_5.jpg', time: '16:00-17:30', frame: '靠近墙面拍侧身，用 2 倍镜压缩蚝壳纹理；衣服越纯色，主体越突出。', outfit: '白色 / 黛蓝', warning: '蚝壳墙属于居民生活空间，未经允许不要推门或倚靠。' },
+      { area: '蟳埔', theme: '渔村海风', name: '蟳埔渔港巷口', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Xunpu_Village_6.jpg/1280px-Xunpu_Village_6.jpg', time: '日落前 1 小时', frame: '把巷口和渔村屋顶留在画面下方，人物朝海风方向走，抓裙摆或衣角的动态。', outfit: '浅蓝 / 奶油白', warning: '海边风大且日晒强，带防晒和发夹；不要靠近作业渔船。' }
+    ];
     const areas = ['全部', '古城', '西街', '中山路', '水门巷', '关岳庙', '东街', '蟳埔'];
     const types = ['全部', '早餐', '主食', '小吃', '正餐', '甜品'];
-    const state = { area: '全部', type: '全部', savedOnly: false, dialogId: null, activeDay: 0, saved: new Set(JSON.parse(localStorage.getItem('quanzhou-food-saved') || '[]')) };
+    const state = { area: '全部', type: '全部', photoArea: '全部', savedOnly: false, dialogId: null, activeDay: 0, saved: new Set(JSON.parse(localStorage.getItem('quanzhou-food-saved') || '[]')) };
 
     const $ = (selector) => document.querySelector(selector);
     const icon = () => window.lucide && window.lucide.createIcons();
     const persist = () => localStorage.setItem('quanzhou-food-saved', JSON.stringify([...state.saved]));
     const visibleFoods = () => foods.filter((food) => (state.area === '全部' || food.area === state.area) && (state.type === '全部' || food.type === state.type) && (!state.savedOnly || state.saved.has(food.id)));
+    const visiblePhotoSpots = () => photoSpots.filter((spot) => state.photoArea === '全部' || spot.area === state.photoArea);
 
     function renderFilters() {
       $('#area-filters').innerHTML = areas.map((item) => { const count = item === '全部' ? foods.length : foods.filter((food) => food.area === item).length; return `<button class="filter-chip ${state.area === item ? 'active' : ''}" data-area="${item}">${item}<small> ${count}</small></button>`; }).join('');
@@ -294,13 +354,21 @@
       document.querySelectorAll('[data-day]').forEach((button) => button.addEventListener('click', () => { state.activeDay = Number(button.dataset.day); renderWeekPlanner(); icon(); }));
     }
 
+    function renderPhotoSpots() {
+      const data = visiblePhotoSpots();
+      $('#photo-count').textContent = `${data.length} 个出片机位`;
+      $('#photo-area-filters').innerHTML = areas.map((item) => { const count = item === '全部' ? photoSpots.length : photoSpots.filter((spot) => spot.area === item).length; return `<button class="filter-chip ${state.photoArea === item ? 'active' : ''}" data-photo-area="${item}">${item}<small> ${count}</small></button>`; }).join('');
+      $('#photo-grid').innerHTML = data.map((spot, index) => `<article class="photo-card"><div class="spot-image"><img src="${spot.image}" alt="${spot.name}实拍照片" loading="${index < 3 ? 'eager' : 'lazy'}"></div><div class="spot-body"><div class="spot-top"><span class="spot-area">${spot.area} · ${spot.theme}</span><span class="spot-time"><i data-lucide="sun"></i>${spot.time}</span></div><h3 class="spot-title">${spot.name}</h3><p class="spot-frame"><strong>建议机位</strong>${spot.frame}</p><div class="spot-pills"><span class="spot-pill">穿搭：${spot.outfit}</span><span class="spot-pill">顺路可拍</span></div><p class="spot-warning"><i data-lucide="triangle-alert"></i>${spot.warning}</p></div></article>`).join('');
+      document.querySelectorAll('[data-photo-area]').forEach((button) => button.addEventListener('click', () => { state.photoArea = button.dataset.photoArea; renderPhotoSpots(); icon(); }));
+    }
+
     function renderSaved() {
       $('#saved-count').textContent = state.saved.size;
       $('#saved-toggle').classList.toggle('active', state.savedOnly);
       $('#saved-toggle').setAttribute('aria-pressed', state.savedOnly);
     }
 
-    function render() { renderFilters(); renderFoods(); renderRoute(); renderWeekPlanner(); renderSaved(); icon(); }
+    function render() { renderFilters(); renderFoods(); renderRoute(); renderWeekPlanner(); renderPhotoSpots(); renderSaved(); icon(); }
 
     function toggleSave(id) {
       if (state.saved.has(id)) state.saved.delete(id); else state.saved.add(id);
