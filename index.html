@@ -34,7 +34,7 @@
     .saved-button { display: inline-flex; align-items: center; gap: 8px; min-height: 38px; padding: 0 12px; border: 1px solid rgba(255,255,255,.65); border-radius: 5px; background: rgba(41, 31, 23, .16); color: #fffaf4; cursor: pointer; font-size: 13px; font-weight: 700; backdrop-filter: blur(10px); }
     .saved-button svg { width: 16px; height: 16px; }
 
-    .hero { position: relative; display: grid; min-height: 650px; place-items: end start; color: #fffaf4; isolation: isolate; background: #8d3026 url("https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=2000&q=88") center/cover no-repeat; }
+    .hero { position: relative; display: grid; min-height: 650px; place-items: end start; color: #fffaf4; isolation: isolate; background: #8d3026 url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Quanzhou-style_Kiu%E2%81%BF-b%C3%B3-ah_%28Ginger_Duck%29_at_Yipin_Xiangqing_Restaurant%2C_Beijing_%2820240908174515%29.jpg/1280px-Quanzhou-style_Kiu%E2%81%BF-b%C3%B3-ah_%28Ginger_Duck%29_at_Yipin_Xiangqing_Restaurant%2C_Beijing_%2820240908174515%29.jpg") center/cover no-repeat; }
     .hero::before { position: absolute; inset: 0; z-index: -1; content: ""; background: linear-gradient(90deg, rgba(51,19,16,.88) 0%, rgba(61,23,17,.66) 42%, rgba(39,20,13,.2) 100%); }
     .hero::after { position: absolute; right: -90px; bottom: -90px; z-index: -1; width: 380px; height: 380px; border: 32px solid rgba(255,239,195,.35); border-radius: 50%; content: ""; }
     .hero-content { width: min(1180px, calc(100% - 48px)); margin: 0 auto; padding: 160px 0 84px; }
@@ -47,17 +47,18 @@
     .hero-details svg { width: 15px; height: 15px; }
 
     .container { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
-    .route-strip { display: grid; grid-template-columns: minmax(250px, .9fr) 1.7fr auto; align-items: center; gap: 34px; margin-top: -42px; padding: 27px 30px; border: 1px solid #e4d8cb; border-radius: 7px; background: var(--white); box-shadow: var(--shadow); }
+    .route-strip { display: grid; grid-template-columns: minmax(230px, .72fr) 1.8fr; gap: 28px 36px; margin-top: -42px; padding: 30px; border: 1px solid #e4d8cb; border-radius: 7px; background: var(--white); box-shadow: var(--shadow); }
     .route-kicker { color: var(--red); font-size: 12px; font-weight: 800; letter-spacing: .13em; }
     .route-title { margin-top: 5px; font-size: 25px; font-weight: 800; line-height: 1.15; }
     .route-subtitle { margin-top: 7px; color: var(--muted); font-size: 13px; }
-    .route-steps { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-    .route-step { display: grid; gap: 3px; min-width: 0; padding: 0; border: 0; background: transparent; color: inherit; cursor: pointer; font: inherit; text-align: left; }
+    .route-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+    .route-step { display: grid; gap: 4px; min-width: 0; min-height: 101px; padding: 13px 14px; border: 1px solid #eaded5; border-radius: 6px; background: #fffaf5; color: inherit; cursor: pointer; font: inherit; text-align: left; transition: border-color .18s ease, background .18s ease; }
+    .route-step:hover { border-color: var(--jade); background: #f3faf7; }
     .route-time { color: var(--red); font-size: 12px; font-weight: 800; }
-    .route-food { overflow: hidden; color: var(--ink); font-size: 14px; font-weight: 800; text-overflow: ellipsis; white-space: nowrap; }
-    .route-step small { color: var(--muted); font-size: 11px; }
-    .route-divider { width: 100%; height: 1px; background: #e3d4c7; }
-    .route-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-width: 112px; min-height: 42px; border: 1px solid var(--jade); border-radius: 5px; background: transparent; color: var(--jade); cursor: pointer; font-size: 13px; font-weight: 800; }
+    .route-food { overflow: hidden; color: var(--ink); font-size: 15px; font-weight: 800; text-overflow: ellipsis; white-space: nowrap; }
+    .route-step small { color: var(--muted); font-size: 11px; line-height: 1.4; }
+    .route-divider { display: none; }
+    .route-button { display: inline-flex; grid-column: 1 / -1; align-items: center; justify-content: center; gap: 8px; width: max-content; min-width: 160px; min-height: 42px; border: 1px solid var(--jade); border-radius: 5px; background: transparent; color: var(--jade); cursor: pointer; font-size: 13px; font-weight: 800; }
     .route-button:hover { background: var(--jade); color: white; }
 
     .section-head { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-top: 72px; }
@@ -75,21 +76,22 @@
     .type-row .filter-chip { border-color: #e7d5cb; background: #fff4ed; color: #87594f; }
     .type-row .filter-chip.active { border-color: var(--red); background: var(--red); color: white; }
 
+    .filter-feedback { margin: 18px 0 -9px; padding: 11px 13px; border-left: 3px solid var(--gold); background: #fff3df; color: #70593c; font-size: 13px; }
     .food-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 17px; margin-top: 29px; }
-    .food-card { position: relative; min-height: 236px; overflow: hidden; padding: 22px; border: 1px solid var(--line); border-radius: 7px; background: var(--white); cursor: pointer; transition: transform .2s ease, box-shadow .2s ease; }
+    .food-card { position: relative; display: flex; min-height: 362px; overflow: hidden; flex-direction: column; border: 1px solid var(--line); border-radius: 7px; background: var(--white); cursor: pointer; transition: transform .2s ease, box-shadow .2s ease; }
     .food-card:hover { transform: translateY(-3px); box-shadow: 0 13px 25px rgba(50, 38, 29, .1); }
-    .food-card::after { position: absolute; right: -30px; bottom: -45px; width: 150px; height: 150px; border-radius: 50%; content: ""; opacity: .46; }
-    .food-card.tone-gold::after { background: #ecd2a9; }.food-card.tone-jade::after { background: #b9ddd3; }.food-card.tone-coral::after { background: #f0c5bb; }
-    .food-icon { position: absolute; right: 13px; bottom: 7px; z-index: 1; font-size: 79px; filter: drop-shadow(0 8px 1px rgba(60,30,22,.12)); }
-    .food-top { position: relative; z-index: 2; display: flex; align-items: start; justify-content: space-between; gap: 12px; }
+    .food-photo { position: relative; height: 161px; overflow: hidden; background: #ddd; }.food-photo::after { position: absolute; inset: 0; content: ""; background: linear-gradient(180deg, transparent 45%, rgba(26,22,17,.32)); }.food-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }.food-card:hover .food-photo img { transform: scale(1.04); }
+    .food-body { position: relative; flex: 1; padding: 18px 20px 18px; }.food-top { position: relative; z-index: 2; display: flex; align-items: start; justify-content: space-between; gap: 12px; }
     .food-area { color: var(--red); font-size: 11px; font-weight: 800; letter-spacing: .12em; }
     .heart { display: grid; width: 31px; height: 31px; place-items: center; border: 0; border-radius: 5px; background: #f6eee7; color: #8c9b95; cursor: pointer; }
     .heart:hover, .heart.saved { background: #f7dfd8; color: var(--red); }.heart svg { width: 17px; height: 17px; }
-    .food-name { position: relative; z-index: 2; margin: 30px 0 0; color: var(--ink); font-size: 26px; font-weight: 800; letter-spacing: 0; }
-    .food-copy { position: relative; z-index: 2; max-width: 73%; margin: 9px 0 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
-    .food-bottom { position: absolute; right: 22px; bottom: 19px; left: 22px; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .food-name { position: relative; z-index: 2; margin: 13px 0 0; color: var(--ink); font-size: 25px; font-weight: 800; letter-spacing: 0; }
+    .food-copy { position: relative; z-index: 2; margin: 8px 0 0; color: var(--muted); font-size: 13px; line-height: 1.65; }.food-place { position: relative; z-index: 2; display: flex; align-items: center; gap: 5px; margin-top: 11px; color: #637a72; font-size: 11px; }.food-place svg { width: 13px; height: 13px; }
+    .food-bottom { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 14px; }
     .food-tag { padding: 4px 8px; border-radius: 4px; background: #e8f2ee; color: var(--jade); font-size: 10px; font-weight: 800; }.food-price { color: var(--red); font-size: 13px; font-weight: 800; }
     .empty-card { grid-column: 1 / -1; padding: 28px; border: 1px dashed #d8c5b8; border-radius: 7px; background: #fffdf9; color: #80665d; font-size: 14px; text-align: center; }
+
+    .walk-guide { margin-top: 74px; }.walk-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; margin-top: 27px; border-top: 2px solid var(--jade); }.walk-stop { position: relative; min-height: 190px; padding: 25px 18px 18px 0; border-right: 1px solid var(--line); }.walk-stop:not(:first-child) { padding-left: 18px; }.walk-stop:last-child { border-right: 0; }.walk-number { color: var(--red); font-size: 12px; font-weight: 800; letter-spacing: .14em; }.walk-time { margin-top: 13px; color: var(--ink); font-size: 23px; font-weight: 800; }.walk-food { margin-top: 5px; color: var(--red); font-family: Georgia, "STKaiti", "KaiTi", serif; font-size: 29px; font-weight: 800; }.walk-area { margin-top: 8px; color: #597168; font-size: 12px; font-weight: 700; }.walk-note { margin: 14px 0 0; color: var(--muted); font-size: 12px; line-height: 1.65; }
 
     .notice { display: grid; grid-template-columns: 50px 1fr; gap: 16px; margin: 70px 0 0; padding: 36px 0; border-top: 1px solid #ded4cb; background: transparent; }
     .notice-number { color: var(--jade); font-size: 18px; font-weight: 800; }.notice h3 { margin: 0; font-size: 20px; }.notice p { max-width: 650px; margin: 8px 0 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
@@ -98,8 +100,8 @@
     dialog { width: min(520px, calc(100% - 32px)); padding: 0; border: 0; border-radius: 8px; background: var(--white); box-shadow: 0 26px 80px rgba(35,27,18,.28); }
     dialog::backdrop { background: rgba(29, 34, 30, .55); backdrop-filter: blur(3px); }.dialog-inner { padding: 32px; }.dialog-close { position: absolute; top: 15px; right: 15px; display: grid; width: 33px; height: 33px; place-items: center; border: 0; border-radius: 5px; background: #f6eee7; color: var(--ink); cursor: pointer; }.dialog-close svg { width: 17px; }.dialog-icon { font-size: 58px; }.dialog-area { margin-top: 12px; color: var(--red); font-size: 11px; font-weight: 800; letter-spacing: .12em; }.dialog-title { margin: 5px 0 0; font-family: Georgia, "STKaiti", "KaiTi", serif; font-size: 41px; }.dialog-intro { margin: 13px 0 0; color: var(--muted); font-size: 14px; line-height: 1.7; }.detail-list { display: grid; gap: 12px; margin-top: 25px; }.detail-row { display: grid; grid-template-columns: 80px 1fr; gap: 12px; padding: 13px 0; border-top: 1px solid var(--line); }.detail-label { color: var(--red); font-size: 12px; font-weight: 800; }.detail-value { color: #40554f; font-size: 13px; line-height: 1.55; }.detail-save { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 46px; margin-top: 24px; border: 0; border-radius: 5px; background: var(--red); color: white; cursor: pointer; font-weight: 800; }.detail-save svg { width: 17px; }
 
-    @media (max-width: 860px) { .route-strip { grid-template-columns: 1fr auto; }.route-steps { grid-column: 1 / -1; }.food-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    @media (max-width: 620px) { .topbar, .hero-content, .container { width: min(100% - 32px, 1180px); }.topbar { padding: 18px 0; }.brand { font-size: 19px; }.saved-button span { display: none; }.hero { min-height: 600px; }.hero::before { background: linear-gradient(90deg, rgba(51,19,16,.88), rgba(61,23,17,.42)); }.hero-content { padding: 150px 0 62px; }.hero-description { max-width: 340px; }.route-strip { display: block; margin-top: -26px; padding: 23px 20px; }.route-steps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 23px; }.route-divider { display: none; }.route-button { width: 100%; margin-top: 21px; }.section-head { margin-top: 55px; } h2 { font-size: 33px; }.food-grid { grid-template-columns: 1fr; gap: 12px; }.food-card { min-height: 205px; }.food-copy { max-width: 76%; }.notice { margin-top: 46px; }.footer { display: block; }.footer p + p { margin-top: 8px; } }
+    @media (max-width: 860px) { .route-strip { grid-template-columns: 1fr; }.food-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }.walk-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }.walk-stop:nth-child(2) { border-right: 0; }.walk-stop:nth-child(n+3) { border-top: 1px solid var(--line); padding-top: 25px; } }
+    @media (max-width: 620px) { .topbar, .hero-content, .container { width: min(100% - 32px, 1180px); }.topbar { padding: 18px 0; }.brand { font-size: 19px; }.saved-button span { display: none; }.hero { min-height: 600px; }.hero::before { background: linear-gradient(90deg, rgba(51,19,16,.88), rgba(61,23,17,.42)); }.hero-content { padding: 150px 0 62px; }.hero-description { max-width: 340px; }.route-strip { display: block; margin-top: -26px; padding: 23px 20px; }.route-steps { grid-template-columns: repeat(2, 1fr); margin-top: 23px; }.route-step { min-height: 90px; }.route-button { width: 100%; margin-top: 21px; }.section-head { margin-top: 55px; } h2 { font-size: 33px; }.food-grid { grid-template-columns: 1fr; gap: 12px; }.food-card { min-height: 346px; }.notice { margin-top: 46px; }.walk-guide { margin-top: 55px; }.walk-grid { grid-template-columns: 1fr; }.walk-stop, .walk-stop:not(:first-child) { min-height: 0; padding: 21px 0; border-right: 0; border-top: 1px solid var(--line); }.walk-stop:first-child { border-top: 0; }.footer { display: block; }.footer p + p { margin-top: 8px; } }
   </style>
 </head>
 <body>
@@ -125,6 +127,11 @@
         <button class="route-button" id="route-button">查看路线 <i data-lucide="arrow-down"></i></button>
       </section>
 
+      <section class="walk-guide" id="route-guide" aria-labelledby="route-guide-title">
+        <div class="section-head"><div><span class="eyebrow">照着走就行</span><h2 id="route-guide-title">古城一日美食路线</h2></div><span class="count-label">从钟楼附近出发，走着吃最舒服</span></div>
+        <div class="walk-grid" id="walk-guide-list"></div>
+      </section>
+
       <section aria-labelledby="find-food-title">
         <div class="section-head"><div><span class="eyebrow">按区域找吃的</span><h2 id="find-food-title">离你近的那一口</h2></div><span class="count-label" id="food-count"></span></div>
         <div class="filters">
@@ -143,12 +150,12 @@
 
   <script>
     const foods = [
-      { id: 'mienxianhu', name: '面线糊', emoji: '🥣', area: '古城', type: '早餐', price: '¥8-16', time: '08:00', intro: '细面线熬进鲜甜汤底，油条和醋肉是灵魂搭配。', tag: '本地早餐', order: '面线糊 + 油条 + 醋肉', tip: '先点小碗，留胃给后面的肉粽。', warning: '汤底和配料常含海鲜、猪肉。', tone: 'gold' },
-      { id: 'rouzong', name: '烧肉粽', emoji: '🍙', area: '中山路', type: '主食', price: '¥12-28', time: '11:30', intro: '糯米包着香菇、猪肉与板栗，蘸花生酱更有闽南味。', tag: '招牌主食', order: '烧肉粽 + 贡糖花生酱', tip: '一个分着吃刚好，单人别再加太多主食。', warning: '含糯米、花生和猪肉，肠胃敏感者适量。', tone: 'jade' },
-      { id: 'hailijian', name: '海蛎煎', emoji: '🦪', area: '西街', type: '小吃', price: '¥18-32', time: '12:30', intro: '蚵仔鲜、地瓜粉香，边缘煎得焦脆才算到位。', tag: '现煎海味', order: '海蛎煎 + 蒜蓉甜辣酱', tip: '可以要求“煎脆一点”，口感会更好。', warning: '贝类过敏者不要尝试。', tone: 'coral' },
-      { id: 'jiangmuya', name: '姜母鸭', emoji: '🦆', area: '水门巷', type: '正餐', price: '¥68-128', time: '18:30', intro: '老姜、麻油和米酒慢煨的厚重香气，适合晚风里慢慢吃。', tag: '晚餐首选', order: '姜母鸭 + 炒青菜 + 米饭', tip: '两人点半只，再配一份青菜最舒服。', warning: '酒香和姜味明显，不适合完全不吃姜的人。', tone: 'jade' },
-      { id: 'siguotang', name: '四果汤', emoji: '🍧', area: '关岳庙', type: '甜品', price: '¥8-18', time: '15:00', intro: '石花、阿达子和蜜饯装进清甜冰汤，是逛古城的降温答案。', tag: '清爽甜口', order: '石花 + 阿达子 + 红豆，少糖', tip: '第一次选少糖，能更清楚吃到食材味道。', warning: '糖分不低，可选择少糖或不加蜜饯。', tone: 'gold' },
-      { id: 'tusundong', name: '土笋冻', emoji: '🧊', area: '东街', type: '小吃', price: '¥10-20', time: '16:00', intro: '晶莹的海味小冻，蒜蓉、芥末和甜辣酱决定它的冲击力。', tag: '挑战味蕾', order: '土笋冻小份 + 蒜蓉醋汁', tip: '第一次从一小份开始，蘸料少加一点。', warning: '原料为海洋沙虫，介意者可跳过。', tone: 'coral' }
+      { id: 'mienxianhu', name: '面线糊', emoji: '🥣', area: '古城', type: '早餐', price: '¥8-16', time: '08:00', place: '钟楼 / 东街一带', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Oyster_Vermicelli.jpg/960px-Oyster_Vermicelli.jpg', intro: '细面线熬进鲜甜汤底，油条和醋肉是灵魂搭配。', tag: '本地早餐', order: '面线糊 + 油条 + 醋肉', tip: '先点小碗，留胃给后面的肉粽。', warning: '汤底和配料常含海鲜、猪肉。', tone: 'gold', walk: '从钟楼或东街进古城，早餐铺集中，八点前后最合适。' },
+      { id: 'rouzong', name: '烧肉粽', emoji: '🍙', area: '中山路', type: '主食', price: '¥12-28', time: '11:30', place: '中山中路附近', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Two_Zongzi_styles.jpg/960px-Two_Zongzi_styles.jpg', intro: '糯米包着香菇、猪肉与板栗，蘸花生酱更有闽南味。', tag: '招牌主食', order: '烧肉粽 + 贡糖花生酱', tip: '一个分着吃刚好，单人别再加太多主食。', warning: '含糯米、花生和猪肉，肠胃敏感者适量。', tone: 'jade', walk: '沿中山路往南慢走，肉粽适合当作一段正经午餐。' },
+      { id: 'hailijian', name: '海蛎煎', emoji: '🦪', area: '西街', type: '小吃', price: '¥18-32', time: '12:30', place: '西街 / 开元寺周边', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Oyster_omelette.JPG/960px-Oyster_omelette.JPG', intro: '蚵仔鲜、地瓜粉香，边缘煎得焦脆才算到位。', tag: '现煎海味', order: '海蛎煎 + 蒜蓉甜辣酱', tip: '可以要求“煎脆一点”，口感会更好。', warning: '贝类过敏者不要尝试。', tone: 'coral', walk: '开元寺出来就近找现煎摊，别买冷着摆很久的。' },
+      { id: 'jiangmuya', name: '姜母鸭', emoji: '🦆', area: '水门巷', type: '正餐', price: '¥68-128', time: '18:30', place: '水门巷 / 民权路方向', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Quanzhou-style_Kiu%E2%81%BF-b%C3%B3-ah_%28Ginger_Duck%29_at_Yipin_Xiangqing_Restaurant%2C_Beijing_%2820240908174515%29.jpg/960px-Quanzhou-style_Kiu%E2%81%BF-b%C3%B3-ah_%28Ginger_Duck%29_at_Yipin_Xiangqing_Restaurant%2C_Beijing_%2820240908174515%29.jpg', intro: '老姜、麻油和米酒慢煨的厚重香气，适合晚风里慢慢吃。', tag: '晚餐首选', order: '姜母鸭 + 炒青菜 + 米饭', tip: '两人点半只，再配一份青菜最舒服。', warning: '酒香和姜味明显，不适合完全不吃姜的人。', tone: 'jade', walk: '傍晚往水门巷方向收尾，晚餐排队时可以先取号。' },
+      { id: 'siguotang', name: '四果汤', emoji: '🍧', area: '关岳庙', type: '甜品', price: '¥8-18', time: '15:00', place: '关岳庙口 / 中山中路', image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=900&q=88', intro: '石花、阿达子和蜜饯装进清甜冰汤，是逛古城的降温答案。', tag: '清爽甜口', order: '石花 + 阿达子 + 红豆，少糖', tip: '第一次选少糖，能更清楚吃到食材味道。', warning: '糖分不低，可选择少糖或不加蜜饯。', tone: 'gold', walk: '午后逛到关岳庙附近暂停，甜品和步行节奏最搭。' },
+      { id: 'tusundong', name: '土笋冻', emoji: '🧊', area: '东街', type: '小吃', price: '¥10-20', time: '16:00', place: '东街 / 后城一带', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/%E5%9C%9F%E7%AC%8B%E5%86%BB.jpg/960px-%E5%9C%9F%E7%AC%8B%E5%86%BB.jpg', intro: '晶莹的海味小冻，蒜蓉、芥末和甜辣酱决定它的冲击力。', tag: '挑战味蕾', order: '土笋冻小份 + 蒜蓉醋汁', tip: '第一次从一小份开始，蘸料少加一点。', warning: '原料为海洋沙虫，介意者可跳过。', tone: 'coral', walk: '东街一带小吃密度高，第一次尝鲜选小份即可。' }
     ];
     const route = [
       ['08:00', '面线糊', 'mienxianhu'], ['11:30', '烧肉粽', 'rouzong'], ['15:00', '四果汤', 'siguotang'], ['18:30', '姜母鸭', 'jiangmuya']
@@ -170,16 +177,29 @@
     }
 
     function renderFoods() {
-      const data = visibleFoods();
+      let data = visibleFoods();
+      let feedback = '';
+      if (!data.length && !state.savedOnly) {
+        data = foods.filter((food) => state.type === '全部' || food.type === state.type);
+        if (!data.length) data = foods;
+        feedback = `<div class="filter-feedback">“${state.area} + ${state.type}”暂时没有直接搭配，下面给你保留同类型的可吃推荐。</div>`;
+      }
       $('#food-count').textContent = state.savedOnly ? `已收藏 ${data.length} 家` : `${data.length} 家推荐`;
-      $('#food-grid').innerHTML = data.length ? data.map((food) => `<article class="food-card tone-${food.tone}" data-open="${food.id}"><div class="food-top"><span class="food-area">${food.area} · ${food.type}</span><button class="heart ${state.saved.has(food.id) ? 'saved' : ''}" data-save="${food.id}" title="${state.saved.has(food.id) ? '取消收藏' : '收藏'}" aria-label="${state.saved.has(food.id) ? '取消收藏' : '收藏'}"><i data-lucide="heart"></i></button></div><div class="food-name">${food.name}</div><p class="food-copy">${food.intro}</p><div class="food-bottom"><span class="food-tag">${food.tag}</span><span class="food-price">${food.price}</span></div><div class="food-icon">${food.emoji}</div></article>`).join('') : '<div class="empty-card">这里还没有收藏，点击菜品右上角的心形按钮试试。</div>';
+      $('#food-grid').innerHTML = feedback + (data.length ? data.map((food) => `<article class="food-card tone-${food.tone}" data-open="${food.id}"><div class="food-photo"><img src="${food.image}" alt="${food.name}美食照片" loading="lazy"></div><div class="food-body"><div class="food-top"><span class="food-area">${food.area} · ${food.type}</span><button class="heart ${state.saved.has(food.id) ? 'saved' : ''}" data-save="${food.id}" title="${state.saved.has(food.id) ? '取消收藏' : '收藏'}" aria-label="${state.saved.has(food.id) ? '取消收藏' : '收藏'}"><i data-lucide="heart"></i></button></div><div class="food-name">${food.name}</div><p class="food-copy">${food.intro}</p><div class="food-place"><i data-lucide="map-pin"></i>${food.place}</div><div class="food-bottom"><span class="food-tag">${food.tag}</span><span class="food-price">${food.price}</span></div></div></article>`).join('') : '<div class="empty-card">还没有收藏。先在下方菜品右上角点心形按钮，再回来查看。</div>');
       document.querySelectorAll('[data-save]').forEach((button) => button.addEventListener('click', (event) => { event.stopPropagation(); toggleSave(button.dataset.save); }));
       document.querySelectorAll('[data-open]').forEach((card) => card.addEventListener('click', () => openDialog(card.dataset.open)));
     }
 
     function renderRoute() {
-      $('#route-steps').innerHTML = route.map(([time, name, id], index) => `<button class="route-step" data-route="${id}"><span class="route-time">${time}</span><span class="route-food">${name}</span><small>${index === 0 ? '暖胃开场' : index === 3 ? '正式晚餐' : '边走边吃'}</small></button>${index < route.length - 1 ? '<span class="route-divider"></span>' : ''}`).join('');
+      $('#route-steps').innerHTML = route.map(([time, name, id], index) => `<button class="route-step" data-route="${id}"><span class="route-time">${time}</span><span class="route-food">${name}</span><small>${index === 0 ? '暖胃开场' : index === 3 ? '晚餐收尾' : index === 2 ? '午后甜口' : '古城正餐'}</small></button>`).join('');
       document.querySelectorAll('[data-route]').forEach((button) => button.addEventListener('click', () => openDialog(button.dataset.route)));
+    }
+
+    function renderWalkGuide() {
+      $('#walk-guide-list').innerHTML = route.map(([time, name, id], index) => {
+        const food = foods.find((item) => item.id === id);
+        return `<article class="walk-stop"><div class="walk-number">STOP 0${index + 1}</div><div class="walk-time">${time}</div><div class="walk-food">${name}</div><div class="walk-area">${food.place}</div><p class="walk-note">${food.walk}</p></article>`;
+      }).join('');
     }
 
     function renderSaved() {
@@ -188,7 +208,7 @@
       $('#saved-toggle').setAttribute('aria-pressed', state.savedOnly);
     }
 
-    function render() { renderFilters(); renderFoods(); renderRoute(); renderSaved(); icon(); }
+    function render() { renderFilters(); renderFoods(); renderRoute(); renderWalkGuide(); renderSaved(); icon(); }
 
     function toggleSave(id) {
       if (state.saved.has(id)) state.saved.delete(id); else state.saved.add(id);
@@ -217,7 +237,7 @@
     }
 
     $('#saved-toggle').addEventListener('click', () => { state.savedOnly = !state.savedOnly; render(); });
-    $('#route-button').addEventListener('click', () => { document.querySelector('#find-food-title').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+    $('#route-button').addEventListener('click', () => { document.querySelector('#route-guide').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
     $('#dialog-close').addEventListener('click', () => $('#food-dialog').close());
     $('#dialog-save').addEventListener('click', () => toggleSave(state.dialogId));
     $('#food-dialog').addEventListener('click', (event) => { if (event.target === $('#food-dialog')) $('#food-dialog').close(); });
