@@ -81,13 +81,13 @@
     .food-card { position: relative; display: flex; min-height: 362px; overflow: hidden; flex-direction: column; border: 1px solid var(--line); border-radius: 7px; background: var(--white); cursor: pointer; transition: transform .2s ease, box-shadow .2s ease; }
     .food-card:hover { transform: translateY(-3px); box-shadow: 0 13px 25px rgba(50, 38, 29, .1); }
     .food-photo { position: relative; height: 161px; overflow: hidden; background: #ddd; }.food-photo::after { position: absolute; inset: 0; content: ""; background: linear-gradient(180deg, transparent 45%, rgba(26,22,17,.32)); }.food-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }.food-card:hover .food-photo img { transform: scale(1.04); }
-    .food-body { position: relative; flex: 1; padding: 18px 20px 18px; }.food-top { position: relative; z-index: 2; display: flex; align-items: start; justify-content: space-between; gap: 12px; }
+    .food-body { position: relative; display: flex; flex: 1; flex-direction: column; padding: 18px 20px 18px; }.food-top { position: relative; z-index: 2; display: flex; align-items: start; justify-content: space-between; gap: 12px; }
     .food-area { color: var(--red); font-size: 11px; font-weight: 800; letter-spacing: .12em; }
     .heart { display: grid; width: 31px; height: 31px; place-items: center; border: 0; border-radius: 5px; background: #f6eee7; color: #8c9b95; cursor: pointer; }
     .heart:hover, .heart.saved { background: #f7dfd8; color: var(--red); }.heart svg { width: 17px; height: 17px; }
     .food-name { position: relative; z-index: 2; margin: 13px 0 0; color: var(--ink); font-size: 25px; font-weight: 800; letter-spacing: 0; }
-    .food-copy { position: relative; z-index: 2; margin: 8px 0 0; color: var(--muted); font-size: 13px; line-height: 1.65; }.food-place { position: relative; z-index: 2; display: flex; align-items: center; gap: 5px; margin-top: 11px; color: #637a72; font-size: 11px; }.food-place svg { width: 13px; height: 13px; }
-    .food-bottom { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 14px; }
+    .food-copy { position: relative; z-index: 2; margin: 8px 0 0; color: var(--muted); font-size: 13px; line-height: 1.65; }.food-place, .food-search { position: relative; z-index: 2; display: flex; align-items: flex-start; gap: 5px; color: #637a72; font-size: 11px; line-height: 1.55; }.food-place { margin-top: 12px; }.food-search { margin-top: 7px; color: #8a665d; }.food-place svg, .food-search svg { flex: none; width: 13px; height: 13px; margin-top: 2px; }
+    .food-bottom { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: auto; padding-top: 15px; }
     .food-tag { padding: 4px 8px; border-radius: 4px; background: #e8f2ee; color: var(--jade); font-size: 10px; font-weight: 800; }.food-price { color: var(--red); font-size: 13px; font-weight: 800; }
     .empty-card { grid-column: 1 / -1; padding: 28px; border: 1px dashed #d8c5b8; border-radius: 7px; background: #fffdf9; color: #80665d; font-size: 14px; text-align: center; }
 
@@ -95,7 +95,7 @@
 
     .week-planner { margin-top: 74px; scroll-margin-top: 24px; }.week-tabs { display: grid; grid-template-columns: repeat(7, minmax(120px, 1fr)); gap: 8px; margin-top: 26px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: thin; }.week-tab { min-height: 64px; padding: 10px 12px; border: 1px solid #deded6; border-radius: 6px; background: #fffdf9; color: #5a6863; cursor: pointer; text-align: left; }.week-tab:hover { border-color: #9fbeb5; }.week-tab.active { border-color: var(--jade); background: var(--jade); color: white; }.week-tab small { display: block; font-size: 11px; font-weight: 800; letter-spacing: .12em; }.week-tab strong { display: block; margin-top: 4px; font-size: 14px; white-space: nowrap; }.day-panel { display: grid; grid-template-columns: minmax(280px, .76fr) 1.4fr; gap: 35px; margin-top: 24px; padding: 26px 0 8px; border-top: 2px solid var(--red); }.day-visual { position: relative; min-height: 460px; overflow: hidden; background: #d9d1c5; }.day-visual::after { position: absolute; inset: 0; content: ""; background: linear-gradient(180deg, transparent 35%, rgba(26,21,17,.68)); }.day-visual img { width: 100%; height: 100%; object-fit: cover; }.day-visual-copy { position: absolute; right: 24px; bottom: 23px; left: 24px; z-index: 1; color: white; }.day-count { color: #ffe2aa; font-size: 12px; font-weight: 800; letter-spacing: .14em; }.day-title { margin: 6px 0 0; font-family: Georgia, "STKaiti", "KaiTi", serif; font-size: 37px; line-height: 1.05; }.day-zone { margin-top: 8px; color: rgba(255,255,255,.88); font-size: 13px; line-height: 1.6; }.day-content { min-width: 0; }.day-meta { display: flex; flex-wrap: wrap; gap: 9px; }.day-meta span { display: inline-flex; align-items: center; gap: 6px; padding: 7px 9px; border-radius: 4px; background: #e9f3ef; color: #376b60; font-size: 12px; font-weight: 700; }.day-meta svg { width: 14px; height: 14px; }.day-summary { margin: 19px 0 18px; color: #52635e; font-size: 14px; line-height: 1.75; }.day-stops { border-top: 1px solid var(--line); }.day-stop { display: grid; grid-template-columns: 64px minmax(130px, .75fr) 1.45fr auto; gap: 15px; align-items: start; padding: 15px 0; border-bottom: 1px solid var(--line); }.day-stop-time { color: var(--red); font-size: 13px; font-weight: 800; }.day-stop-meal { color: #59786e; font-size: 12px; font-weight: 800; }.day-stop-food { display: block; margin-top: 4px; color: var(--ink); font-size: 16px; font-weight: 800; }.day-stop-copy { color: var(--muted); font-size: 12px; line-height: 1.6; }.day-stop-cost { padding: 4px 7px; border-radius: 4px; background: #fff0e3; color: var(--red); font-size: 11px; font-weight: 800; white-space: nowrap; }
 
-    .photo-guide { margin-top: 78px; scroll-margin-top: 24px; }.photo-guide-intro { max-width: 540px; margin: 12px 0 0; color: var(--muted); font-size: 14px; line-height: 1.75; }.photo-filters { margin-top: 27px; }.photo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 17px; margin-top: 27px; }.photo-card { display: flex; min-width: 0; overflow: hidden; flex-direction: column; border: 1px solid var(--line); border-radius: 7px; background: var(--white); }.spot-image { aspect-ratio: 16 / 10; overflow: hidden; background: #d9d1c5; }.spot-image img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }.photo-card:hover .spot-image img { transform: scale(1.035); }.spot-body { display: flex; flex: 1; flex-direction: column; padding: 18px 19px 19px; }.spot-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }.spot-area { color: var(--red); font-size: 11px; font-weight: 800; letter-spacing: .11em; }.spot-time { display: inline-flex; flex: none; align-items: center; gap: 5px; color: #58746b; font-size: 11px; font-weight: 800; }.spot-time svg, .spot-warning svg { width: 14px; height: 14px; }.spot-title { margin: 10px 0 0; color: var(--ink); font-family: Georgia, "STKaiti", "KaiTi", serif; font-size: 26px; line-height: 1.12; }.spot-frame { margin: 12px 0 0; color: var(--muted); font-size: 12px; line-height: 1.7; }.spot-frame strong { display: inline-block; margin-right: 7px; color: var(--jade); font-size: 11px; letter-spacing: .08em; }.spot-pills { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 13px; }.spot-pill { padding: 5px 7px; border-radius: 4px; background: #e9f3ef; color: #417367; font-size: 11px; font-weight: 700; }.spot-warning { display: flex; align-items: flex-start; gap: 6px; margin: 14px 0 0; padding-top: 13px; border-top: 1px solid var(--line); color: #80665d; font-size: 11px; line-height: 1.6; }.spot-warning svg { flex: none; margin-top: 2px; color: var(--red); }
+    .photo-guide { margin-top: 78px; scroll-margin-top: 24px; }.photo-guide-intro { max-width: 540px; margin: 12px 0 0; color: var(--muted); font-size: 14px; line-height: 1.75; }.photo-filters { margin-top: 27px; }.photo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 17px; margin-top: 27px; }.photo-card { display: flex; min-width: 0; overflow: hidden; flex-direction: column; border: 1px solid var(--line); border-radius: 7px; background: var(--white); }.spot-image { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #d9d1c5; }.spot-image img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }.photo-card:hover .spot-image img { transform: scale(1.035); }.spot-body { display: flex; flex: 1; flex-direction: column; padding: 18px 19px 19px; }.spot-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }.spot-area { color: var(--red); font-size: 11px; font-weight: 800; letter-spacing: .11em; }.spot-time { display: inline-flex; flex: none; align-items: center; gap: 5px; color: #58746b; font-size: 11px; font-weight: 800; }.spot-time svg, .spot-address svg, .spot-warning svg { width: 14px; height: 14px; }.spot-title { margin: 10px 0 0; color: var(--ink); font-family: Georgia, "STKaiti", "KaiTi", serif; font-size: 26px; line-height: 1.12; }.spot-frame { margin: 12px 0 0; color: var(--muted); font-size: 12px; line-height: 1.7; }.spot-frame strong { display: inline-block; margin-right: 7px; color: var(--jade); font-size: 11px; letter-spacing: .08em; }.spot-address { display: flex; align-items: flex-start; gap: 6px; margin-top: 11px; color: #637a72; font-size: 11px; line-height: 1.6; }.spot-address svg { flex: none; margin-top: 2px; color: var(--red); }.spot-search { margin: 7px 0 0; color: #8a665d; font-size: 11px; line-height: 1.55; }.spot-pills { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 13px; }.spot-pill { padding: 5px 7px; border-radius: 4px; background: #e9f3ef; color: #417367; font-size: 11px; font-weight: 700; }.spot-warning { display: flex; align-items: flex-start; gap: 6px; margin: 14px 0 0; padding-top: 13px; border-top: 1px solid var(--line); color: #80665d; font-size: 11px; line-height: 1.6; }.spot-warning svg { flex: none; margin-top: 2px; color: var(--red); }
 
     .notice { display: grid; grid-template-columns: 50px 1fr; gap: 16px; margin: 70px 0 0; padding: 36px 0; border-top: 1px solid #ded4cb; background: transparent; }
     .notice-number { color: var(--jade); font-size: 18px; font-weight: 800; }.notice h3 { margin: 0; font-size: 20px; }.notice p { max-width: 650px; margin: 8px 0 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
@@ -157,7 +157,7 @@
     </div>
   </main>
 
-  <dialog id="food-dialog"><div class="dialog-inner"><button class="dialog-close" id="dialog-close" title="关闭" aria-label="关闭"><i data-lucide="x"></i></button><div class="dialog-icon" id="dialog-icon"></div><div class="dialog-area" id="dialog-area"></div><h2 class="dialog-title" id="dialog-title"></h2><p class="dialog-intro" id="dialog-intro"></p><div class="detail-list"><div class="detail-row"><div class="detail-label">这么点最稳</div><div class="detail-value" id="dialog-order"></div></div><div class="detail-row"><div class="detail-label">吃法提醒</div><div class="detail-value" id="dialog-tip"></div></div><div class="detail-row"><div class="detail-label">忌口提示</div><div class="detail-value" id="dialog-warning"></div></div></div><button class="detail-save" id="dialog-save"><i data-lucide="heart"></i><span>收藏这家</span></button></div></dialog>
+  <dialog id="food-dialog"><div class="dialog-inner"><button class="dialog-close" id="dialog-close" title="关闭" aria-label="关闭"><i data-lucide="x"></i></button><div class="dialog-icon" id="dialog-icon"></div><div class="dialog-area" id="dialog-area"></div><h2 class="dialog-title" id="dialog-title"></h2><p class="dialog-intro" id="dialog-intro"></p><div class="detail-list"><div class="detail-row"><div class="detail-label">详细找法</div><div class="detail-value" id="dialog-address"></div></div><div class="detail-row"><div class="detail-label">地图搜索</div><div class="detail-value" id="dialog-map"></div></div><div class="detail-row"><div class="detail-label">这么点最稳</div><div class="detail-value" id="dialog-order"></div></div><div class="detail-row"><div class="detail-label">吃法提醒</div><div class="detail-value" id="dialog-tip"></div></div><div class="detail-row"><div class="detail-label">忌口提示</div><div class="detail-value" id="dialog-warning"></div></div></div><button class="detail-save" id="dialog-save"><i data-lucide="heart"></i><span>收藏这家</span></button></div></dialog>
 
   <script>
     const foods = [
@@ -276,6 +276,21 @@
       ['xunpu-menxian', '海鲜焖面线', '🍜', '主食', '¥35-68', '蟳埔海边小馆', '面线吸满海鲜汤汁，适合海鲜吃得不多的午餐。', '一锅鲜味', '海鲜焖面线小份', '和海鲜粥二选一，避免一餐双主食。', '常含虾、贝类或鱼类，点前确认。']
     ]);
 
+    const foodAreaLocation = {
+      古城: { address: '鲤城区古城核心：钟楼（中山中路、东街、西街交汇处）至府文庙、开元寺东侧的步行片区', entry: '先到钟楼或府文庙，再按本条落点步行约 5-12 分钟。' },
+      西街: { address: '鲤城区西街：从钟楼往开元寺、小西埕方向，覆盖西街主街及南北两侧支巷', entry: '从开元寺南门或小西埕进入，跟着本条落点找摊更省时间。' },
+      中山路: { address: '鲤城区中山中路至中山南路骑楼段：钟楼向关岳庙、天后宫方向一路往南', entry: '以钟楼或关岳庙为起点，沿骑楼步行，再按本条落点定位。' },
+      水门巷: { address: '鲤城区水门巷—民权路片区：德济门遗址与天后宫北侧之间的古城巷道', entry: '从德济门遗址或天后宫往北进巷，按本条落点步行约 3-8 分钟。' },
+      关岳庙: { address: '鲤城区通淮关岳庙（涂门街附近）至中山中路交界的步行范围', entry: '先定位“通淮关岳庙”，庙口与中山中路两侧都有本条落点。' },
+      东街: { address: '鲤城区东街：钟楼北侧至承天寺、后城方向的步行街区', entry: '从钟楼沿东街向北走，按本条落点约 5-15 分钟可到。' },
+      蟳埔: { address: '丰泽区东海街道蟳埔社区：蟳埔村入口、蚝壳厝与海边渔港之间', entry: '从“蟳埔村”入口下车，步行或骑行按本条落点进村，不建议只在路口找。' }
+    };
+    foods.forEach((food) => {
+      const location = foodAreaLocation[food.area];
+      food.address = `${location.address}；本条落点：${food.place}。${location.entry}`;
+      food.mapQuery = `泉州 ${food.name} ${food.area} ${food.place}`;
+    });
+
     const route = [
       ['08:00', '面线糊', 'mienxianhu'], ['11:30', '烧肉粽', 'rouzong'], ['15:00', '四果汤', 'siguotang'], ['18:30', '姜母鸭', 'jiangmuya']
     ];
@@ -311,6 +326,30 @@
       { area: '蟳埔', theme: '蚝壳厝', name: '蚝壳厝墙面', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Xunpu_Village_5.jpg/1280px-Xunpu_Village_5.jpg', time: '16:00-17:30', frame: '靠近墙面拍侧身，用 2 倍镜压缩蚝壳纹理；衣服越纯色，主体越突出。', outfit: '白色 / 黛蓝', warning: '蚝壳墙属于居民生活空间，未经允许不要推门或倚靠。' },
       { area: '蟳埔', theme: '渔村海风', name: '蟳埔渔港巷口', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Xunpu_Village_6.jpg/1280px-Xunpu_Village_6.jpg', time: '日落前 1 小时', frame: '把巷口和渔村屋顶留在画面下方，人物朝海风方向走，抓裙摆或衣角的动态。', outfit: '浅蓝 / 奶油白', warning: '海边风大且日晒强，带防晒和发夹；不要靠近作业渔船。' }
     ];
+    const photoLocationByName = {
+      '开元寺东西塔': { address: '鲤城区西街 176 号，开元寺内大雄宝殿前庭；从西街正门进后沿中轴直走。', search: '泉州开元寺' },
+      '钟楼环岛': { address: '鲤城区中山中路与东街、西街交汇处；在人行道内侧拍，别进入环岛。', search: '泉州钟楼' },
+      '府文庙大成殿': { address: '鲤城区中山中路府文庙内，靠近中山中路骑楼段；从钟楼步行约 10 分钟。', search: '泉州府文庙' },
+      '西街骑楼长街': { address: '鲤城区西街，钟楼至开元寺这一段骑楼主街；建议从开元寺方向往钟楼拍。', search: '泉州西街' },
+      '西街远望双塔': { address: '鲤城区西街小西埕至开元寺一线，面向开元寺双塔方向取景。', search: '小西埕 泉州' },
+      '开元寺大雄宝殿': { address: '鲤城区西街 176 号开元寺内，大雄宝殿前；从西街正门进入最顺。', search: '泉州开元寺大雄宝殿' },
+      '清净寺石门': { address: '鲤城区涂门街 108 号，清净寺入口及石门遗址附近；从关岳庙步行约 8 分钟。', search: '泉州清净寺' },
+      '天后宫山门': { address: '鲤城区天后路 1 号，泉州天后宫山门及前庭；从中山南路转入天后路。', search: '泉州天后宫' },
+      '德济门遗址': { address: '鲤城区天后路 1 号附近，天后宫东南侧的德济门遗址；与天后宫可连着拍。', search: '德济门遗址' },
+      '德济门城砖': { address: '鲤城区天后路 1 号附近德济门遗址内，沿参观步道找城砖立面。', search: '德济门遗址' },
+      '天后宫赑屃碑': { address: '鲤城区天后路 1 号天后宫内，按现场参观动线进入碑刻区域。', search: '泉州天后宫' },
+      '水门巷至天后宫街口': { address: '鲤城区水门巷南口至天后路交界，天后宫北侧巷口；从德济门步行约 3 分钟。', search: '水门巷 泉州' },
+      '通淮关岳庙门楼': { address: '鲤城区涂门街通淮关岳庙正门，关岳庙公交站附近。', search: '通淮关岳庙' },
+      '通淮关岳庙正殿': { address: '鲤城区涂门街通淮关岳庙内，正殿前庭；按香客与参观动线进入。', search: '通淮关岳庙' },
+      '关岳庙檐下细节': { address: '鲤城区涂门街通淮关岳庙内，门楼与檐下木构附近；不要占主入口。', search: '通淮关岳庙' },
+      '承天寺庭院': { address: '鲤城区南俊路 36 号承天寺内，入山门后沿庭院石板路拍摄。', search: '泉州承天寺' },
+      '承天寺殿前': { address: '鲤城区南俊路 36 号承天寺内，主殿前庭；从东街步行约 10 分钟。', search: '泉州承天寺' },
+      '东街钟楼': { address: '鲤城区中山中路与东街、西街交汇处，东街口人行道一侧。', search: '泉州钟楼' },
+      '蟳埔簪花围街巷': { address: '丰泽区东海街道蟳埔社区，蟳埔村入口进村后的簪花与蚝壳厝街巷。', search: '蟳埔村 簪花围' },
+      '蚝壳厝墙面': { address: '丰泽区东海街道蟳埔社区，蟳埔村内蚝壳厝聚集巷道；请以住户通行优先。', search: '蟳埔蚝壳厝' },
+      '蟳埔渔港巷口': { address: '丰泽区东海街道蟳埔社区南侧海边渔港巷口，从蟳埔村入口步行约 10-15 分钟。', search: '蟳埔渔港' }
+    };
+    photoSpots.forEach((spot) => Object.assign(spot, photoLocationByName[spot.name]));
     const areas = ['全部', '古城', '西街', '中山路', '水门巷', '关岳庙', '东街', '蟳埔'];
     const types = ['全部', '早餐', '主食', '小吃', '正餐', '甜品'];
     const state = { area: '全部', type: '全部', photoArea: '全部', savedOnly: false, dialogId: null, activeDay: 0, saved: new Set(JSON.parse(localStorage.getItem('quanzhou-food-saved') || '[]')) };
@@ -337,7 +376,7 @@
         feedback = `<div class="filter-feedback">“${state.area} + ${state.type}”暂时没有直接搭配，下面给你保留同类型的可吃推荐。</div>`;
       }
       $('#food-count').textContent = state.savedOnly ? `已收藏 ${data.length} 道` : `${data.length} 道推荐`;
-      $('#food-grid').innerHTML = feedback + (data.length ? data.map((food) => `<article class="food-card tone-${food.tone}" data-open="${food.id}"><div class="food-photo"><img src="${food.image}" alt="${food.name}美食照片" loading="lazy"></div><div class="food-body"><div class="food-top"><span class="food-area">${food.area} · ${food.type}</span><button class="heart ${state.saved.has(food.id) ? 'saved' : ''}" data-save="${food.id}" title="${state.saved.has(food.id) ? '取消收藏' : '收藏'}" aria-label="${state.saved.has(food.id) ? '取消收藏' : '收藏'}"><i data-lucide="heart"></i></button></div><div class="food-name">${food.name}</div><p class="food-copy">${food.intro}</p><div class="food-place"><i data-lucide="map-pin"></i>${food.place}</div><div class="food-bottom"><span class="food-tag">${food.tag}</span><span class="food-price">${food.price}</span></div></div></article>`).join('') : '<div class="empty-card">还没有收藏。先在下方菜品右上角点心形按钮，再回来查看。</div>');
+      $('#food-grid').innerHTML = feedback + (data.length ? data.map((food, index) => `<article class="food-card tone-${food.tone}" data-open="${food.id}"><div class="food-photo"><img src="${food.image}" alt="${food.name}美食照片" loading="${index < 3 ? 'eager' : 'lazy'}"></div><div class="food-body"><div class="food-top"><span class="food-area">${food.area} · ${food.type}</span><button class="heart ${state.saved.has(food.id) ? 'saved' : ''}" data-save="${food.id}" title="${state.saved.has(food.id) ? '取消收藏' : '收藏'}" aria-label="${state.saved.has(food.id) ? '取消收藏' : '收藏'}"><i data-lucide="heart"></i></button></div><div class="food-name">${food.name}</div><p class="food-copy">${food.intro}</p><div class="food-place"><i data-lucide="map-pin"></i><span>${food.address}</span></div><div class="food-search"><i data-lucide="search"></i><span>地图搜：${food.mapQuery}</span></div><div class="food-bottom"><span class="food-tag">${food.tag}</span><span class="food-price">${food.price}</span></div></div></article>`).join('') : '<div class="empty-card">还没有收藏。先在下方菜品右上角点心形按钮，再回来查看。</div>');
       document.querySelectorAll('[data-save]').forEach((button) => button.addEventListener('click', (event) => { event.stopPropagation(); toggleSave(button.dataset.save); }));
       document.querySelectorAll('[data-open]').forEach((card) => card.addEventListener('click', () => openDialog(card.dataset.open)));
     }
@@ -358,7 +397,7 @@
       const data = visiblePhotoSpots();
       $('#photo-count').textContent = `${data.length} 个出片机位`;
       $('#photo-area-filters').innerHTML = areas.map((item) => { const count = item === '全部' ? photoSpots.length : photoSpots.filter((spot) => spot.area === item).length; return `<button class="filter-chip ${state.photoArea === item ? 'active' : ''}" data-photo-area="${item}">${item}<small> ${count}</small></button>`; }).join('');
-      $('#photo-grid').innerHTML = data.map((spot, index) => `<article class="photo-card"><div class="spot-image"><img src="${spot.image}" alt="${spot.name}实拍照片" loading="${index < 3 ? 'eager' : 'lazy'}"></div><div class="spot-body"><div class="spot-top"><span class="spot-area">${spot.area} · ${spot.theme}</span><span class="spot-time"><i data-lucide="sun"></i>${spot.time}</span></div><h3 class="spot-title">${spot.name}</h3><p class="spot-frame"><strong>建议机位</strong>${spot.frame}</p><div class="spot-pills"><span class="spot-pill">穿搭：${spot.outfit}</span><span class="spot-pill">顺路可拍</span></div><p class="spot-warning"><i data-lucide="triangle-alert"></i>${spot.warning}</p></div></article>`).join('');
+      $('#photo-grid').innerHTML = data.map((spot, index) => `<article class="photo-card"><div class="spot-image"><img src="${spot.image}" alt="${spot.name}实拍照片" loading="${index < 3 ? 'eager' : 'lazy'}"></div><div class="spot-body"><div class="spot-top"><span class="spot-area">${spot.area} · ${spot.theme}</span><span class="spot-time"><i data-lucide="sun"></i>${spot.time}</span></div><h3 class="spot-title">${spot.name}</h3><p class="spot-frame"><strong>建议机位</strong>${spot.frame}</p><div class="spot-address"><i data-lucide="map-pin"></i><span>${spot.address}</span></div><p class="spot-search">地图搜：${spot.search}</p><div class="spot-pills"><span class="spot-pill">穿搭：${spot.outfit}</span><span class="spot-pill">顺路可拍</span></div><p class="spot-warning"><i data-lucide="triangle-alert"></i>${spot.warning}</p></div></article>`).join('');
       document.querySelectorAll('[data-photo-area]').forEach((button) => button.addEventListener('click', () => { state.photoArea = button.dataset.photoArea; renderPhotoSpots(); icon(); }));
     }
 
@@ -383,6 +422,8 @@
       $('#dialog-area').textContent = `${food.area} · ${food.type} · ${food.price}`;
       $('#dialog-title').textContent = food.name;
       $('#dialog-intro').textContent = food.intro;
+      $('#dialog-address').textContent = food.address;
+      $('#dialog-map').textContent = food.mapQuery;
       $('#dialog-order').textContent = food.order;
       $('#dialog-tip').textContent = food.tip;
       $('#dialog-warning').textContent = food.warning;
