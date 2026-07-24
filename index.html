@@ -160,6 +160,86 @@
       { id: 'siguotang', name: '四果汤', emoji: '🍧', area: '关岳庙', type: '甜品', price: '¥8-18', time: '15:00', place: '关岳庙口 / 中山中路', image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=900&q=88', intro: '石花、阿达子和蜜饯装进清甜冰汤，是逛古城的降温答案。', tag: '清爽甜口', order: '石花 + 阿达子 + 红豆，少糖', tip: '第一次选少糖，能更清楚吃到食材味道。', warning: '糖分不低，可选择少糖或不加蜜饯。', tone: 'gold', walk: '午后逛到关岳庙附近暂停，甜品和步行节奏最搭。' },
       { id: 'tusundong', name: '土笋冻', emoji: '🧊', area: '东街', type: '小吃', price: '¥10-20', time: '16:00', place: '东街 / 后城一带', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/%E5%9C%9F%E7%AC%8B%E5%86%BB.jpg/960px-%E5%9C%9F%E7%AC%8B%E5%86%BB.jpg', intro: '晶莹的海味小冻，蒜蓉、芥末和甜辣酱决定它的冲击力。', tag: '挑战味蕾', order: '土笋冻小份 + 蒜蓉醋汁', tip: '第一次从一小份开始，蘸料少加一点。', warning: '原料为海洋沙虫，介意者可跳过。', tone: 'coral', walk: '东街一带小吃密度高，第一次尝鲜选小份即可。' }
     ];
+    const photoByType = {
+      早餐: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Oyster_Vermicelli.jpg/960px-Oyster_Vermicelli.jpg',
+      主食: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Two_Zongzi_styles.jpg/960px-Two_Zongzi_styles.jpg',
+      小吃: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Oyster_omelette.JPG/960px-Oyster_omelette.JPG',
+      正餐: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Quanzhou-style_Kiu%E2%81%BF-b%C3%B3-ah_%28Ginger_Duck%29_at_Yipin_Xiangqing_Restaurant%2C_Beijing_%2820240908174515%29.jpg/960px-Quanzhou-style_Kiu%E2%81%BF-b%C3%B3-ah_%28Ginger_Duck%29_at_Yipin_Xiangqing_Restaurant%2C_Beijing_%2820240908174515%29.jpg',
+      甜品: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=900&q=88'
+    };
+    const timeByType = { 早餐: '07:00-10:30', 主食: '10:30-20:30', 小吃: '10:00-22:00', 正餐: '11:00-22:00', 甜品: '12:00-23:00' };
+    const toneByType = { 早餐: 'gold', 主食: 'jade', 小吃: 'coral', 正餐: 'jade', 甜品: 'gold' };
+    function addRegionalFoods(area, entries) {
+      entries.forEach(([id, name, emoji, type, price, place, intro, tag, order, tip, warning]) => {
+        foods.push({ id, name, emoji, area, type, price, time: timeByType[type], place, image: photoByType[type], intro, tag, order, tip, warning, tone: toneByType[type] });
+      });
+    }
+
+    addRegionalFoods('古城', [
+      ['gucheng-niurou', '牛肉羹', '🥩', '早餐', '¥15-28', '钟楼 / 府文庙周边', '清甜汤底配滑嫩牛肉，适合不想一早吃太油。', '热汤早餐', '牛肉羹 + 咸饭', '肉羹和咸饭二选一加量，别两个都点大份。', '牛肉部位和调味差异大，可先试小碗。'],
+      ['gucheng-runbing', '润饼菜', '🌯', '小吃', '¥12-20', '西街支巷 / 古城步行区', '薄饼卷着蔬菜、肉松和花生碎，清爽不顶胃。', '边走边吃', '润饼菜一份', '让店家少放甜酱，味道会更清爽。', '常含花生、肉松和香菜。'],
+      ['gucheng-manjian', '满煎糕', '🥞', '甜品', '¥8-15', '开元寺外围巷口', '刚出炉外壳微脆，里面是花生和糖的香气。', '现做甜点', '满煎糕半份或分食', '趁热吃，凉了容易发干。', '花生过敏者请避开。'],
+      ['gucheng-huasheng', '花生汤', '🥜', '甜品', '¥8-16', '钟楼 / 开元寺周边', '花生煮到软糯，甜度比四果汤更温和。', '温热甜口', '花生汤 + 油条', '早餐吃更合适，下午不要和甜糕叠加。', '含花生，血糖管理者选少糖。'],
+      ['gucheng-curou', '炸醋肉', '🍖', '小吃', '¥18-30', '古城巷子里的闽南菜档', '酸香腌制后炸得酥脆，是面线糊的经典搭档。', '咸香小食', '炸醋肉小份', '搭配汤类，不建议单吃大份。', '油炸且含猪肉，肠胃敏感者少量。'],
+      ['gucheng-yujuan', '鱼卷汤', '🍲', '早餐', '¥15-26', '东街连到钟楼一带', '鱼浆做成卷后切片入汤，鲜味干净。', '鲜味热汤', '鱼卷汤 + 小份米饭', '先喝原汤，再看是否需要蘸料。', '鱼类过敏者请避开。'],
+      ['gucheng-shihua', '石花膏', '🧊', '甜品', '¥8-16', '西街与东街甜品铺', '海藻冻配糖水，口感比四果汤更轻。', '清凉解腻', '石花膏 + 阿达子', '中午后吃最合适，选少糖。', '部分配料含花生碎。']
+    ]);
+    addRegionalFoods('西街', [
+      ['xijie-curou', '古早炸醋肉', '🍖', '小吃', '¥18-30', '西街 / 小西埕附近', '西街适合把醋肉当作多样小吃里的咸口一站。', '古早炸物', '醋肉小份 + 甜辣酱', '两个人分一份，留胃给润饼和海蛎煎。', '油炸食品，建议趁热吃。'],
+      ['xijie-manjian', '红糖满煎糕', '🥞', '甜品', '¥8-15', '开元寺西侧', '红糖和花生馅香气浓，适合下午边走边分。', '炉边现做', '一块分食', '挑刚出锅的，口感更松。', '含花生和糖。'],
+      ['xijie-runbing', '现包润饼菜', '🌯', '小吃', '¥12-20', '西街主街支巷', '蔬菜、笋丝和花生碎包进薄饼，是西街最不腻的一口。', '清爽小吃', '少甜酱润饼', '中午前后吃更轻松。', '含花生、肉松或香菜可提前说。'],
+      ['xijie-huasheng', '古早花生汤', '🥜', '甜品', '¥8-16', '西街北段', '软烂花生配甜汤，走累后坐下来喝一碗。', '热甜汤', '花生汤小碗', '如果已吃满煎糕，这一站就选半糖。', '花生过敏者不能吃。'],
+      ['xijie-yujuan', '鱼卷拼盘', '🐟', '小吃', '¥18-32', '开元寺周边小吃档', '鱼卷切片后可煎可煮，适合和朋友分着尝。', '海味小吃', '鱼卷 + 鱼羹', '选一份即可，不必再点海鲜主食。', '含鱼浆和淀粉。'],
+      ['xijie-haolibing', '海蛎饼', '🦪', '小吃', '¥6-12', '西街傍晚摊位', '外层炸得酥，里面是海蛎和韭菜的鲜味。', '现炸小食', '海蛎饼一只', '最好傍晚现炸时买，不要放凉。', '贝类过敏者不要尝试。'],
+      ['xijie-shaochuan', '闽南夜间烤物', '🍢', '正餐', '¥35-65', '西街夜间摊位', '夜里把烤海鲜、烤豆干和蔬菜组合起来，适合慢逛。', '夜游加餐', '三样烤物 + 一份汤', '少点多样，不要和姜母鸭安排同一晚。', '海鲜类按当天食材确认。']
+    ]);
+    addRegionalFoods('中山路', [
+      ['zhongshan-xianfan', '闽南咸饭', '🍚', '主食', '¥12-22', '中山中路餐馆', '米饭吸足香菇和肉香，配小菜就是一顿。', '家常主食', '咸饭 + 一份青菜', '中午吃最合适，不要再配完整肉粽。', '部分店铺会用猪油或海鲜干货。'],
+      ['zhongshan-shenhu', '深沪水丸', '🍥', '早餐', '¥15-28', '中山路靠近老街段', '弹牙鱼丸配清汤，口味鲜但不厚重。', '鱼丸热汤', '水丸汤 + 小菜', '可和肉粽错开安排在另一餐。', '鱼类过敏者慎点。'],
+      ['zhongshan-niupai', '牛排汤', '🥩', '早餐', '¥25-45', '中山路北段', '牛骨汤配牛排骨，适合食量大的人。', '硬核早餐', '牛排汤 + 咸饭小份', '早餐吃过这个，中午就改轻食。', '肉量和油脂较高。'],
+      ['zhongshan-yutoubing', '芋头饼', '🥔', '小吃', '¥8-16', '中山中路小吃铺', '芋泥里带咸甜馅，外皮炸得酥。', '咸甜交界', '芋头饼一只', '下午加餐一只足够。', '多为油炸，含芋头和可能的肉馅。'],
+      ['zhongshan-ludou', '绿豆饼', '🫓', '甜品', '¥10-25', '中山路老字号点心铺', '酥皮绿豆馅适合带走，也适合配茶。', '伴手礼', '现买两枚尝鲜', '买散装时问清保质期。', '含糖和油脂，适量品尝。'],
+      ['zhongshan-siguo', '古早四果汤', '🍧', '甜品', '¥8-18', '中山中路甜品档', '可自选石花、阿达子、蜜饯和红豆。', '自选甜水', '石花 + 阿达子 + 红豆', '第一次选少糖、少蜜饯。', '糖分较高。'],
+      ['zhongshan-luwei', '闽南卤味拼盘', '🥓', '正餐', '¥30-55', '中山路家常小馆', '卤肉、豆干和卤蛋适合多人夹着吃。', '下饭卤味', '卤味小拼 + 青菜', '作为配菜，不要单独当一顿大餐。', '口味偏咸，注意搭配主食。']
+    ]);
+    addRegionalFoods('水门巷', [
+      ['shuimen-yazhou', '鸭粥', '🍲', '早餐', '¥15-28', '水门巷周边', '米粥带着鸭肉香，属于比姜母鸭更轻的选择。', '暖胃粥品', '鸭粥 + 小菜', '早上或深夜吃都合适。', '鸭肉和汤底油脂因店而异。'],
+      ['shuimen-curou', '醋肉面线', '🍜', '主食', '¥16-28', '水门巷早餐档', '面线配炸醋肉，酸香和汤味放在一起更完整。', '经典组合', '面线 + 醋肉小份', '点小份即可，晚餐有姜母鸭。', '含猪肉与油炸配料。'],
+      ['shuimen-haixianzhou', '海鲜粥', '🍚', '正餐', '¥28-55', '水门巷夜食区', '米粒煮开后加当天海鲜，适合夜里收尾。', '夜宵热粥', '海鲜粥 + 青菜', '先问当天海鲜和价格。', '甲壳类或贝类过敏者注意。'],
+      ['shuimen-niurou', '牛肉羹', '🥩', '早餐', '¥15-28', '水门巷入口一带', '水门巷的牛肉羹适合和鸭粥错开不同天吃。', '热汤选择', '牛肉羹小碗', '若再点主食，选择半份。', '牛肉部位可提前问。'],
+      ['shuimen-chaomian', '炒面线', '🍝', '主食', '¥18-32', '水门巷附近闽南菜馆', '面线炒到干香，适合和海鲜、青菜一起分享。', '干香主食', '炒面线小份 + 青菜', '两人分食，避免和肉粽重叠。', '常含海鲜干货或猪油。'],
+      ['shuimen-yujuan', '鱼卷汤', '🐟', '小吃', '¥15-26', '水门巷巷口', '清汤鱼卷是重口晚餐前的好过渡。', '轻口海味', '鱼卷汤一碗', '配姜母鸭前不要加太多主食。', '鱼类过敏者请避开。'],
+      ['shuimen-wuxiang', '炸五香', '🥟', '小吃', '¥10-18', '水门巷傍晚摊位', '豆皮卷肉馅炸香，切段后蘸甜辣酱。', '傍晚小食', '炸五香半份', '适合两人分，别与醋肉同时点。', '油炸且多为猪肉馅。']
+    ]);
+    addRegionalFoods('关岳庙', [
+      ['guanyue-shihua', '石花膏', '🧊', '甜品', '¥8-16', '关岳庙口', '石花做成的清凉冻，适合四果汤的替代选项。', '清凉甜品', '石花膏 + 少糖', '如果刚吃过四果汤，这个换到另一天。', '部分小料含花生。'],
+      ['guanyue-tusun', '蒜蓉土笋冻', '🧊', '小吃', '¥10-20', '关岳庙旁小吃档', '小份土笋冻配蒜蓉醋，海味冲击感更明显。', '尝鲜必点', '土笋冻小份', '先尝原味，再少量加芥末。', '原料为海洋沙虫，介意者跳过。'],
+      ['guanyue-rouyan', '肉燕', '🥟', '早餐', '¥16-28', '关岳庙至中山路段', '薄燕皮包肉馅入汤，口感比普通馄饨更韧。', '汤品小食', '肉燕汤 + 小菜', '可当轻早餐，不要和面线同天堆叠。', '含猪肉和面粉。'],
+      ['guanyue-huasheng', '花生汤配麻糍', '🥜', '甜品', '¥12-22', '关岳庙甜品铺', '热花生汤和软糯麻糍适合雨天或走累后。', '传统甜口', '花生汤小碗 + 麻糍一枚', '两种都顶饱，建议分食。', '含花生和糯米。'],
+      ['guanyue-haolibing', '现炸海蛎饼', '🦪', '小吃', '¥6-12', '关岳庙周边傍晚摊', '海蛎、韭菜和米浆炸到边缘酥脆。', '现炸海味', '海蛎饼一只', '等现炸，不买久放的。', '贝类过敏者请避开。'],
+      ['guanyue-maci', '花生麻糍', '🍡', '甜品', '¥8-15', '关岳庙附近茶点铺', '糯米团裹花生糖粉，是一口就很饱的甜点。', '闽南茶点', '麻糍两枚分食', '留到下午茶，不要紧接正餐。', '含糯米和花生。'],
+      ['guanyue-shaoxiancao', '烧仙草', '🍮', '甜品', '¥10-20', '关岳庙至中山路段', '偏草本凉感的甜品，适合替代重甜四果汤。', '清凉甜水', '烧仙草少糖', '夏天更合适，配料不要全加。', '糖水和奶制小料可自行选择。']
+    ]);
+    addRegionalFoods('东街', [
+      ['dongjie-mianxian', '古早面线糊', '🥣', '早餐', '¥8-16', '东街早餐铺', '东街早餐铺密度高，适合把面线糊放在第一站。', '清晨开胃', '面线糊 + 油条', '八点前后选择更多，先点小碗。', '常含海鲜、猪肉配料。'],
+      ['dongjie-rouzong', '花生肉粽', '🍙', '主食', '¥12-28', '东街连到钟楼段', '糯米和花生酱风味更明显，适合午间正餐。', '闽南名片', '肉粽一枚 + 清汤', '一个就够，吃完多走一段。', '含糯米、花生与猪肉。'],
+      ['dongjie-yujuan', '鱼卷汤', '🐟', '早餐', '¥15-26', '东街小吃档', '鱼卷切片下汤，鲜味清楚又不厚重。', '鲜汤小食', '鱼卷汤 + 小菜', '作为肉粽后的轻餐更合适。', '鱼类过敏者慎点。'],
+      ['dongjie-niurou', '牛肉咸饭', '🥩', '主食', '¥22-38', '东街周边', '牛肉配咸饭是食量大时的稳妥组合。', '饱腹午餐', '牛肉羹 + 咸饭小份', '只适合把它当一天的主餐。', '牛肉和油脂含量较高。'],
+      ['dongjie-maci', '芝麻麻糍', '🍡', '甜品', '¥8-15', '东街点心摊', '软糯外皮配芝麻或花生粉，适合当一口甜点。', '软糯茶点', '麻糍一到两枚', '现做更好吃，不要买太多放久。', '含糯米和坚果粉。'],
+      ['dongjie-yuanxiao', '元宵丸', '🍡', '甜品', '¥12-20', '东街传统甜品铺', '小汤圆配甜汤，口感比麻糍更轻。', '热甜汤圆', '元宵丸小碗', '晚上吃更暖，白天别和花生汤同点。', '含糯米，注意甜度。'],
+      ['dongjie-ludou', '绿豆饼', '🫓', '甜品', '¥10-25', '东街伴手礼铺', '酥皮包绿豆馅，适合走之前买作伴手礼。', '可带走', '现买两枚尝鲜', '买盒装时核对生产日期。', '含糖和油脂。']
+    ]);
+    addRegionalFoods('蟳埔', [
+      ['xunpu-yujuan', '蟳埔鱼卷汤', '🐟', '早餐', '¥18-30', '蟳埔渔村入口', '鱼卷配清汤，适合到海边前先吃一碗热的。', '渔村早餐', '鱼卷汤 + 小菜', '海边风大，早餐建议吃热汤。', '鱼类过敏者请避开。'],
+      ['xunpu-zhou', '海鲜粥', '🍚', '主食', '¥28-55', '蟳埔渔村周边', '用当天海鲜煮粥，鲜味直接但不适合点太多配菜。', '鲜味主食', '海鲜粥 + 青菜', '先问海鲜种类和是否按斤计价。', '甲壳类、贝类过敏者注意。'],
+      ['xunpu-haolijian', '蟳埔海蛎煎', '🦪', '小吃', '¥18-35', '蟳埔海边小吃档', '海蛎更强调鲜味，口感建议点脆边。', '海边现煎', '海蛎煎一份', '午饭后再吃更不容易腻。', '贝类过敏者不要尝试。'],
+      ['xunpu-tusun', '海边土笋冻', '🧊', '小吃', '¥10-20', '蟳埔渔村内', '土笋冻是尝鲜项目，蒜蓉醋能压住海味。', '勇敢尝鲜', '土笋冻小份', '第一次从两三颗开始。', '原料为海洋沙虫，介意者跳过。'],
+      ['xunpu-shihua', '石花膏', '🧊', '甜品', '¥8-16', '蟳埔海边饮品档', '海藻冻配糖水，走完海边后最解腻。', '海风甜水', '石花膏少糖', '与海鲜午餐间隔半小时更舒服。', '部分小料可能含花生。'],
+      ['xunpu-haolibing', '现炸海蛎饼', '🦪', '小吃', '¥6-12', '蟳埔傍晚摊位', '米浆裹海蛎和韭菜现炸，适合傍晚买一只。', '酥脆海味', '海蛎饼一只', '不要和海蛎煎安排在同一餐。', '贝类过敏者请避开。'],
+      ['xunpu-qingzheng', '清蒸时令海鲜', '🦐', '正餐', '¥100-180', '蟳埔周边海鲜排档', '清蒸最能吃到当天海鲜的新鲜度，点菜要克制。', '午餐核心', '一鱼一贝一蔬菜', '两人三样足够，先问清单价和做法。', '海鲜价格与食材按当天为准。'],
+      ['xunpu-zhaxia', '炸虾枣', '🦐', '小吃', '¥12-22', '蟳埔周边小食摊', '虾仁和肉末做成小丸子炸香，是适合分食的咸点。', '闽南炸物', '虾枣小份', '与清蒸海鲜错开，别让一餐全是海味。', '多含虾、猪肉和油炸成分。']
+    ]);
+
     const route = [
       ['08:00', '面线糊', 'mienxianhu'], ['11:30', '烧肉粽', 'rouzong'], ['15:00', '四果汤', 'siguotang'], ['18:30', '姜母鸭', 'jiangmuya']
     ];
@@ -172,7 +252,7 @@
       { label: 'D6', short: '惠安海岸', title: '惠安崇武：海风配鱼卷和海蛎', zone: '崇武古城 - 海岸线', transport: '建议自驾 / 包车', budget: '人均 ¥150-240', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Oyster_omelette.JPG/960px-Oyster_omelette.JPG', summary: '这天距离更远，安排要松。先看海再吃饭，海鲜类提前问价，回市区不用再加一顿大餐。', stops: [['08:30','早餐','地瓜粉团','出发前在市区或惠安镇上吃热食。','¥15-25'],['11:00','小吃','鱼卷 + 鱼羹','崇武古城附近先吃鱼卷，口味清爽。','¥25-40'],['13:00','午餐','清蒸海鲜','海边午餐点三样足够：贝类、鱼、青菜。','¥100-180'],['16:00','下午茶','海蛎饼','刚炸好最好吃，买小份边走边吃。','¥8-15'],['19:00','晚餐','惠安家常菜','返程前吃简单一餐，别再堆海鲜。','¥35-60']] },
       { label: 'D7', short: '南安收官', title: '南安收官：牛肉、鸡爪和麻糍', zone: '南安市区 - 洪濑 / 英都方向', transport: '自驾或打车衔接', budget: '人均 ¥100-160', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Quanzhou-style_Kiu%E2%81%BF-b%C3%B3-ah_%28Ginger_Duck%29_at_Yipin_Xiangqing_Restaurant%2C_Beijing_%2820240908174515%29.jpg/960px-Quanzhou-style_Kiu%E2%81%BF-b%C3%B3-ah_%28Ginger_Duck%29_at_Yipin_Xiangqing_Restaurant%2C_Beijing_%2820240908174515%29.jpg', summary: '最后一天不再追求“多”，用牛肉汤、洪濑鸡爪和麻糍收官。适合买伴手礼，也给胃留一点余地。', stops: [['08:30','早餐','牛肉汤 + 米粉','先吃清汤系早餐，胃会舒服很多。','¥20-35'],['11:30','午餐','闽南家常菜','点一荤一素一汤，避开前几天重复菜。','¥35-60'],['14:30','伴手礼','洪濑鸡爪','带走前问清是否需要冷藏和保质期。','¥25-50'],['16:00','甜口','英都麻糍','选现做小份，花生馅很顶饱。','¥10-20'],['18:30','收官','清淡面食或粥','返程前吃轻一点，别再挑战重油重辣。','¥25-45']] }
     ];
-    const areas = ['全部', '古城', '西街', '中山路', '水门巷', '关岳庙', '东街'];
+    const areas = ['全部', '古城', '西街', '中山路', '水门巷', '关岳庙', '东街', '蟳埔'];
     const types = ['全部', '早餐', '主食', '小吃', '正餐', '甜品'];
     const state = { area: '全部', type: '全部', savedOnly: false, dialogId: null, activeDay: 0, saved: new Set(JSON.parse(localStorage.getItem('quanzhou-food-saved') || '[]')) };
 
@@ -182,7 +262,7 @@
     const visibleFoods = () => foods.filter((food) => (state.area === '全部' || food.area === state.area) && (state.type === '全部' || food.type === state.type) && (!state.savedOnly || state.saved.has(food.id)));
 
     function renderFilters() {
-      $('#area-filters').innerHTML = areas.map((item) => `<button class="filter-chip ${state.area === item ? 'active' : ''}" data-area="${item}">${item}</button>`).join('');
+      $('#area-filters').innerHTML = areas.map((item) => { const count = item === '全部' ? foods.length : foods.filter((food) => food.area === item).length; return `<button class="filter-chip ${state.area === item ? 'active' : ''}" data-area="${item}">${item}<small> ${count}</small></button>`; }).join('');
       $('#type-filters').innerHTML = types.map((item) => `<button class="filter-chip ${state.type === item ? 'active' : ''}" data-type="${item}">${item}</button>`).join('');
       document.querySelectorAll('[data-area]').forEach((button) => button.addEventListener('click', () => { state.area = button.dataset.area; render(); }));
       document.querySelectorAll('[data-type]').forEach((button) => button.addEventListener('click', () => { state.type = button.dataset.type; render(); }));
@@ -196,7 +276,7 @@
         if (!data.length) data = foods;
         feedback = `<div class="filter-feedback">“${state.area} + ${state.type}”暂时没有直接搭配，下面给你保留同类型的可吃推荐。</div>`;
       }
-      $('#food-count').textContent = state.savedOnly ? `已收藏 ${data.length} 家` : `${data.length} 家推荐`;
+      $('#food-count').textContent = state.savedOnly ? `已收藏 ${data.length} 道` : `${data.length} 道推荐`;
       $('#food-grid').innerHTML = feedback + (data.length ? data.map((food) => `<article class="food-card tone-${food.tone}" data-open="${food.id}"><div class="food-photo"><img src="${food.image}" alt="${food.name}美食照片" loading="lazy"></div><div class="food-body"><div class="food-top"><span class="food-area">${food.area} · ${food.type}</span><button class="heart ${state.saved.has(food.id) ? 'saved' : ''}" data-save="${food.id}" title="${state.saved.has(food.id) ? '取消收藏' : '收藏'}" aria-label="${state.saved.has(food.id) ? '取消收藏' : '收藏'}"><i data-lucide="heart"></i></button></div><div class="food-name">${food.name}</div><p class="food-copy">${food.intro}</p><div class="food-place"><i data-lucide="map-pin"></i>${food.place}</div><div class="food-bottom"><span class="food-tag">${food.tag}</span><span class="food-price">${food.price}</span></div></div></article>`).join('') : '<div class="empty-card">还没有收藏。先在下方菜品右上角点心形按钮，再回来查看。</div>');
       document.querySelectorAll('[data-save]').forEach((button) => button.addEventListener('click', (event) => { event.stopPropagation(); toggleSave(button.dataset.save); }));
       document.querySelectorAll('[data-open]').forEach((card) => card.addEventListener('click', () => openDialog(card.dataset.open)));
