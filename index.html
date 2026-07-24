@@ -105,7 +105,7 @@
     dialog::backdrop { background: rgba(29, 34, 30, .55); backdrop-filter: blur(3px); }.dialog-inner { padding: 32px; }.dialog-close { position: absolute; top: 15px; right: 15px; display: grid; width: 33px; height: 33px; place-items: center; border: 0; border-radius: 5px; background: #f6eee7; color: var(--ink); cursor: pointer; }.dialog-close svg { width: 17px; }.dialog-icon { font-size: 58px; }.dialog-area { margin-top: 12px; color: var(--red); font-size: 11px; font-weight: 800; letter-spacing: .12em; }.dialog-title { margin: 5px 0 0; font-family: Georgia, "STKaiti", "KaiTi", serif; font-size: 41px; }.dialog-intro { margin: 13px 0 0; color: var(--muted); font-size: 14px; line-height: 1.7; }.detail-list { display: grid; gap: 12px; margin-top: 25px; }.detail-row { display: grid; grid-template-columns: 80px 1fr; gap: 12px; padding: 13px 0; border-top: 1px solid var(--line); }.detail-label { color: var(--red); font-size: 12px; font-weight: 800; }.detail-value { color: #40554f; font-size: 13px; line-height: 1.55; }.dialog-map-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; color: var(--jade); font-size: 12px; font-weight: 800; text-decoration: none; }.dialog-map-link:hover { color: var(--red); text-decoration: underline; }.dialog-map-link svg { width: 14px; height: 14px; }.detail-save { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 46px; margin-top: 24px; border: 0; border-radius: 5px; background: var(--red); color: white; cursor: pointer; font-weight: 800; }.detail-save svg { width: 17px; }
 
     @media (max-width: 860px) { .route-strip { grid-template-columns: 1fr; }.food-grid, .photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }.walk-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }.walk-stop:nth-child(2) { border-right: 0; }.walk-stop:nth-child(n+3) { border-top: 1px solid var(--line); padding-top: 25px; }.day-panel { grid-template-columns: 1fr; }.day-visual { min-height: 310px; }.day-content { max-width: 100%; } }
-    @media (max-width: 620px) { .topbar, .hero-content, .container { width: min(100% - 32px, 1180px); }.topbar { padding: 18px 0; }.brand { font-size: 19px; }.saved-button span { display: none; }.hero { min-height: 490px; }.hero::before { background: linear-gradient(90deg, rgba(51,19,16,.88), rgba(61,23,17,.42)); }.hero-content { padding: 112px 0 48px; }.hero-description { max-width: 340px; }.route-strip { display: block; margin-top: 0; padding: 23px 20px; border-radius: 0 0 7px 7px; }.route-steps { grid-template-columns: repeat(2, 1fr); margin-top: 23px; }.route-step { min-height: 90px; }.route-button { width: 100%; margin-top: 21px; }.section-head { margin-top: 55px; } h2 { font-size: 33px; }.filter-row { align-items: flex-start; overflow: visible; }.filter-label { margin-top: 9px; }.filter-chips { flex-wrap: wrap; gap: 8px; }.food-grid, .photo-grid { grid-template-columns: 1fr; gap: 12px; }.food-card { min-height: 346px; }.notice { margin-top: 46px; }.week-planner, .photo-guide { margin-top: 55px; }.week-tabs { display: flex; gap: 8px; }.week-tab { flex: 0 0 118px; }.day-panel { gap: 21px; }.day-visual { min-height: 245px; }.day-title { font-size: 32px; }.day-stop { grid-template-columns: 52px 1fr auto; gap: 9px; }.day-stop-copy { grid-column: 2 / -1; margin-top: -3px; }.day-stop-cost { grid-column: 3; grid-row: 1; }.walk-guide { margin-top: 55px; }.walk-grid { grid-template-columns: 1fr; }.walk-stop, .walk-stop:not(:first-child) { min-height: 0; padding: 21px 0; border-right: 0; border-top: 1px solid var(--line); }.walk-stop:first-child { border-top: 0; }.footer { display: block; }.footer p + p { margin-top: 8px; } }
+    @media (max-width: 620px) { .topbar, .hero-content, .container { width: min(100% - 32px, 1180px); }.topbar { padding: 18px 0; }.brand { font-size: 19px; }.saved-button span { display: none; }.hero { min-height: 490px; }.hero::before { background: linear-gradient(90deg, rgba(51,19,16,.88), rgba(61,23,17,.42)); }.hero-content { padding: 112px 0 48px; }.hero-description { max-width: 340px; }.route-strip { display: block; margin-top: 0; padding: 23px 20px; border-radius: 0 0 7px 7px; }.route-steps { grid-template-columns: repeat(2, 1fr); margin-top: 23px; }.route-step { min-height: 90px; }.route-button { width: 100%; margin-top: 21px; }.section-head { flex-wrap: wrap; align-items: flex-start; margin-top: 55px; }.section-head .count-label { width: 100%; }.section-head > div { min-width: 0; }.section-head > div .photo-guide-intro { max-width: none; }.section-head > div + .count-label { margin-top: -6px; } h2 { font-size: 33px; }.filter-row { display: block; width: 100%; overflow: visible; }.filter-label { display: block; margin: 0 0 8px; }.filter-chips { width: 100%; min-width: 0; flex-wrap: wrap; gap: 8px; }.food-grid, .photo-grid { grid-template-columns: 1fr; gap: 12px; }.food-card { min-height: 346px; }.notice { margin-top: 46px; }.week-planner, .photo-guide { margin-top: 55px; }.week-tabs { display: flex; gap: 8px; }.week-tab { flex: 0 0 118px; }.day-panel { gap: 21px; }.day-visual { min-height: 245px; }.day-title { font-size: 32px; }.day-stop { grid-template-columns: 52px 1fr auto; gap: 9px; }.day-stop-copy { grid-column: 2 / -1; margin-top: -3px; }.day-stop-cost { grid-column: 3; grid-row: 1; }.walk-guide { margin-top: 55px; }.walk-grid { grid-template-columns: 1fr; }.walk-stop, .walk-stop:not(:first-child) { min-height: 0; padding: 21px 0; border-right: 0; border-top: 1px solid var(--line); }.walk-stop:first-child { border-top: 0; }.footer { display: block; }.footer p + p { margin-top: 8px; } }
   </style>
 </head>
 <body>
@@ -138,7 +138,7 @@
       </section>
 
       <section class="photo-guide" id="photo-guide" aria-labelledby="photo-guide-title">
-        <div class="section-head"><div><span class="eyebrow">吃完去拍</span><h2 id="photo-guide-title">泉州出片机位</h2><p class="photo-guide-intro">每个区域都安排 3 个能顺路抵达的实拍点。按建议时段去、把衣服颜色和机位准备好，少走回头路。</p></div><span class="count-label" id="photo-count"></span></div>
+        <div class="section-head"><div><span class="eyebrow">吃完去拍</span><h2 id="photo-guide-title">泉州出片机位</h2><p class="photo-guide-intro">每个区域都安排 5 个能顺路抵达的实拍点：地标、巷弄、建筑细节和日落海风都覆盖。按建议时段去、把衣服颜色和机位准备好，少走回头路。</p></div><span class="count-label" id="photo-count"></span></div>
         <div class="filters photo-filters"><div class="filter-row"><span class="filter-label">区域</span><div class="filter-chips" id="photo-area-filters"></div></div></div>
         <div class="photo-grid" id="photo-grid"></div>
       </section>
@@ -275,6 +275,48 @@
       ['xunpu-yufan', '闽南鱼饭', '🐟', '主食', '¥28-52', '蟳埔渔村内家常海鲜店', '当天鲜鱼煮熟放凉后吃，鱼肉紧实，配酱油水很有渔村感。', '渔村特色', '鱼饭小份 + 青菜', '先问当天是什么鱼，第一次选小份尝鲜。', '含鱼类，刺较多需慢吃。'],
       ['xunpu-menxian', '海鲜焖面线', '🍜', '主食', '¥35-68', '蟳埔海边小馆', '面线吸满海鲜汤汁，适合海鲜吃得不多的午餐。', '一锅鲜味', '海鲜焖面线小份', '和海鲜粥二选一，避免一餐双主食。', '常含虾、贝类或鱼类，点前确认。']
     ]);
+    addRegionalFoods('古城', [
+      ['gucheng-roujiabao', '闽南肉夹包', '🥪', '小吃', '¥8-16', '钟楼至府文庙支巷', '松软小包夹卤肉和酸菜，适合早餐与下午之间垫一口。', '咸香垫胃', '肉夹包一枚 + 热汤', '单吃一枚就够，别和咸饭安排在同一餐。', '多含猪肉、面粉和腌菜。'],
+      ['gucheng-yutougui', '芋头粿', '🥔', '小吃', '¥8-15', '古城菜市场外沿', '芋头丝和米浆煎出焦边，口感比炸物更扎实。', '古早米点', '芋头粿一枚', '趁热吃，搭甜辣酱不要下太重。', '部分摊位会加入虾皮或肉末。'],
+      ['gucheng-diguafentuan', '地瓜粉团', '🍲', '早餐', '¥15-28', '东街往钟楼的早餐段', '地瓜粉煮成软团配海鲜或瘦肉，雨天吃尤其舒服。', '暖胃热食', '地瓜粉团小碗', '作为一顿早餐就够，午餐换清爽小吃。', '常含海鲜、肉类或胡椒。'],
+      ['gucheng-caitousuan', '菜头酸', '🥬', '小吃', '¥6-12', '府文庙周边巷口小摊', '萝卜腌得酸甜爽脆，是连续吃油炸小食后的解腻选项。', '解腻小菜', '菜头酸一小份', '适合配醋肉或五香，不要空腹吃太多。', '酸度较高，胃酸明显者少量。']
+    ]);
+    addRegionalFoods('西街', [
+      ['xijie-douhua', '西街豆花', '🍮', '甜品', '¥8-14', '西街开元寺至小西埕段', '豆香清淡、糖水可选，是满煎糕之外较轻的一口甜。', '轻甜收尾', '豆花半糖', '中午暴走后吃更舒服，不要与花生汤叠加。', '糖浆和花生碎可提前说明。'],
+      ['xijie-xiaoguan', '白灼小管', '🦑', '正餐', '¥48-88', '西街外围闽南小馆', '小管只用白灼和蘸料，鲜味干净，适合两人分食。', '鲜味正餐', '白灼小管 + 青菜', '先问当天份量和单价，别再点重口海鲜。', '海鲜过敏者请避开。'],
+      ['xijie-tusunpinpan', '土笋冻拼盘', '🧊', '小吃', '¥16-30', '西街南侧支巷', '不同大小的土笋冻配蒜蓉醋，适合想尝鲜但不想吃太多的人。', '尝鲜拼盘', '小份拼盘', '第一次先不加芥末，确认接受度再加。', '原料为海洋沙虫，介意者跳过。'],
+      ['xijie-miguo', '手工米粿', '🍡', '甜品', '¥8-16', '小西埕周边点心摊', '糯米和花生做成软糯小点，配热茶很合适。', '茶点小食', '米粿两枚分食', '拍照前少吃一枚，避免糯米顶胃。', '含糯米、花生与糖。']
+    ]);
+    addRegionalFoods('中山路', [
+      ['zhongshan-haolibing', '中山路海蛎饼', '🦪', '小吃', '¥6-12', '中山中路骑楼下傍晚摊', '米浆裹海蛎和韭菜现炸，适合从钟楼一路往南时加一站。', '骑楼现炸', '海蛎饼一只', '拿到就吃，放凉会回软。', '贝类过敏者不要尝试。'],
+      ['zhongshan-rouyan', '肉燕汤', '🥟', '早餐', '¥16-28', '中山中路靠近钟楼段', '燕皮韧、肉馅鲜，适合当做肉粽之外的轻早餐。', '清汤早餐', '肉燕汤 + 小菜', '早上吃它，午餐再安排肉粽更合理。', '含猪肉和面粉。'],
+      ['zhongshan-diguazhou', '地瓜粥配小菜', '🍚', '早餐', '¥12-22', '中山南路家常早餐铺', '地瓜粥淡甜配腌菜，是连续海鲜之后的轻口修整。', '清淡早饭', '地瓜粥 + 一样小菜', '适合前一晚吃过姜母鸭或海鲜后安排。', '腌菜偏咸，注意搭配。'],
+      ['zhongshan-maci', '芝麻麻糍', '🍡', '甜品', '¥8-15', '中山路传统点心档', '软糯麻糍裹满芝麻糖粉，体积小却很顶饱。', '行走甜点', '麻糍一到两枚', '带走吃可以，别与肉粽同一小时连着吃。', '含糯米、芝麻和糖。']
+    ]);
+    addRegionalFoods('水门巷', [
+      ['shuimen-xianfan', '水门咸饭', '🍚', '主食', '¥12-22', '水门巷至民权路家常店', '香菇、肉末和米饭焖香，适合白天在古城走路多时补能量。', '家常主食', '咸饭小份 + 清汤', '与炒面线二选一，不要双主食。', '常含猪油或海鲜干货。'],
+      ['shuimen-roujiabao', '卤肉夹包', '🥪', '小吃', '¥8-16', '水门巷口小食档', '卤肉、酸菜夹进小包里，适合等姜母鸭取号时吃一枚。', '等位小食', '肉夹包一枚', '晚餐前只点一枚，别先把胃吃满。', '含猪肉、面粉和腌菜。'],
+      ['shuimen-ludou', '绿豆汤', '🥣', '甜品', '¥8-16', '水门巷北口甜汤铺', '煮软绿豆配糖水，能中和姜母鸭和炸五香的厚重感。', '清甜解腻', '绿豆汤少糖', '天气热时优先选它，不和花生汤同天重复。', '糖分可要求减量。'],
+      ['shuimen-caitousuan', '酸甜菜头', '🥬', '小吃', '¥6-12', '德济门至水门巷步行段', '脆萝卜酸甜开胃，适合作为海鲜粥或炸物的配角。', '开胃小菜', '菜头酸小份', '搭正餐吃，不建议空腹多吃。', '酸度偏高，胃敏感者少量。']
+    ]);
+    addRegionalFoods('关岳庙', [
+      ['guanyue-niurou', '关岳牛肉羹', '🥩', '早餐', '¥15-28', '关岳庙至涂门街段', '清汤牛肉羹适合早上先垫胃，再逛关岳庙和清净寺。', '热汤开场', '牛肉羹 + 小份咸饭', '牛肉羹和咸饭都点小份，留胃给甜品。', '牛肉部位和口味可先问。'],
+      ['guanyue-yujuan', '鱼卷汤', '🐟', '早餐', '¥15-26', '关岳庙口往中山路方向', '鲜味轻、口感弹，是不想吃重油早餐时的稳定选择。', '轻口鲜汤', '鱼卷汤 + 小菜', '先喝原汤，再决定要不要加蘸料。', '鱼类过敏者请避开。'],
+      ['guanyue-curou', '醋肉小拼', '🍖', '小吃', '¥18-30', '关岳庙周边闽南小馆', '醋肉炸得酸香，适合和四果汤、烧仙草形成咸甜组合。', '咸香加餐', '醋肉小份', '两人分食，避免与五香同吃。', '油炸且含猪肉。'],
+      ['guanyue-bingfan', '古早冰饭', '🍧', '甜品', '¥10-20', '关岳庙至中山中路甜品铺', '碎冰配蜜饯和糯米配料，口感比四果汤更有颗粒感。', '夏日冰品', '冰饭少糖', '和四果汤选一个，避免一下午双甜品。', '糖和蜜饯较多。']
+    ]);
+    addRegionalFoods('东街', [
+      ['dongjie-haolijian', '东街海蛎煎', '🦪', '小吃', '¥18-32', '东街靠近钟楼段', '点脆边的海蛎煎更适合边走边吃，和土笋冻错开安排。', '现煎海味', '海蛎煎一份', '推荐午后吃，不要紧接海鲜正餐。', '贝类过敏者不要尝试。'],
+      ['dongjie-rouyan', '肉燕汤', '🥟', '早餐', '¥16-28', '东街至承天寺步行段', '燕皮薄而韧，汤头不厚重，适合承天寺前先吃热的。', '古早热汤', '肉燕汤 + 小菜', '清晨去承天寺前吃最舒服。', '含猪肉和面粉。'],
+      ['dongjie-curou', '东街醋肉', '🍖', '小吃', '¥18-30', '东街传统小食铺', '酸香肉块外酥里嫩，配面线糊或花生汤都有反差。', '经典炸物', '醋肉小份', '让店家切小块，方便两人分食。', '油炸且含猪肉。'],
+      ['dongjie-diguafentuan', '地瓜粉团', '🍲', '早餐', '¥15-28', '东街早餐密集段', '地瓜粉团的汤感和配料很足，适合早上走路前垫胃。', '暖胃主食', '地瓜粉团小碗', '作为早餐即可，午餐改轻一点。', '配料可能含海鲜和肉类。']
+    ]);
+    addRegionalFoods('蟳埔', [
+      ['xunpu-hualuo', '白灼花螺', '🐚', '正餐', '¥48-88', '蟳埔海鲜排档', '花螺白灼后蘸酱，鲜甜清爽，适合和鱼饭搭配。', '海鲜尝鲜', '白灼花螺一份', '先确认按份还是按斤计价。', '贝类过敏者不要尝试。'],
+      ['xunpu-dongfen', '海鲜焖冬粉', '🍜', '主食', '¥35-68', '蟳埔海边小馆', '冬粉吸足海鲜汤汁，比粥更有嚼劲，适合两人分。', '海味主食', '海鲜焖冬粉小份', '与海鲜焖面线二选一。', '常含虾、贝类或鱼类。'],
+      ['xunpu-zicaitang', '紫菜海蛎汤', '🥣', '早餐', '¥18-32', '蟳埔村入口早餐摊', '紫菜和海蛎煮成清汤，海风大的早晨来一碗很舒服。', '海边热汤', '紫菜海蛎汤 + 小菜', '早餐不再加海蛎饼，避免同类叠加。', '贝类过敏者请避开。'],
+      ['xunpu-xiaobaoyu', '清蒸小鲍鱼', '🐚', '正餐', '¥68-120', '蟳埔周边海鲜排档', '简单清蒸能吃出鲜味，适合与青菜、鱼饭组成一桌。', '原味海鲜', '小鲍鱼一份 + 青菜', '点菜前明确单价、数量和做法。', '贝类过敏者请避开，价格随当天食材变化。']
+    ]);
 
     const foodAreaLocation = {
       古城: { address: '鲤城区古城核心：钟楼（中山中路、东街、西街交汇处）至府文庙、开元寺东侧的步行片区', entry: '先到钟楼或府文庙，再按本条落点步行约 5-12 分钟。', nearby: '吃完可顺着东街去承天寺，或向西接西街、开元寺。' },
@@ -327,7 +369,21 @@
       { area: '东街', theme: '老城交汇', name: '东街钟楼', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/%E6%B3%89%E5%B7%9E%E9%92%9F%E6%A5%BC.jpg/1280px-%E6%B3%89%E5%B7%9E%E9%92%9F%E6%A5%BC.jpg', time: '蓝调时刻', frame: '傍晚开灯后用 1 倍镜拍街口纵深，人物停在人行道一侧，留出钟楼上方天空。', outfit: '红棕 / 黑色', warning: '遵守红绿灯，别为拍照停到车流中间。' },
       { area: '蟳埔', theme: '簪花围', name: '蟳埔簪花围街巷', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Xunpu_Village_1.jpg/1280px-Xunpu_Village_1.jpg', time: '08:00-10:00', frame: '簪花造型适合半身和回头照，站在窄巷边缘，让花围与蚝壳墙同时入镜。', outfit: '素色上衣 / 花围', warning: '造型、拍摄与交通费用先问清；巷道窄，别堵住住户出入。' },
       { area: '蟳埔', theme: '蚝壳厝', name: '蚝壳厝墙面', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Xunpu_Village_5.jpg/1280px-Xunpu_Village_5.jpg', time: '16:00-17:30', frame: '靠近墙面拍侧身，用 2 倍镜压缩蚝壳纹理；衣服越纯色，主体越突出。', outfit: '白色 / 黛蓝', warning: '蚝壳墙属于居民生活空间，未经允许不要推门或倚靠。' },
-      { area: '蟳埔', theme: '渔村海风', name: '蟳埔渔港巷口', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Xunpu_Village_6.jpg/1280px-Xunpu_Village_6.jpg', time: '日落前 1 小时', frame: '把巷口和渔村屋顶留在画面下方，人物朝海风方向走，抓裙摆或衣角的动态。', outfit: '浅蓝 / 奶油白', warning: '海边风大且日晒强，带防晒和发夹；不要靠近作业渔船。' }
+      { area: '蟳埔', theme: '渔村海风', name: '蟳埔渔港巷口', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Xunpu_Village_6.jpg/1280px-Xunpu_Village_6.jpg', time: '日落前 1 小时', frame: '把巷口和渔村屋顶留在画面下方，人物朝海风方向走，抓裙摆或衣角的动态。', outfit: '浅蓝 / 奶油白', warning: '海边风大且日晒强，带防晒和发夹；不要靠近作业渔船。' },
+      { area: '古城', theme: '宋元石刻', name: '开元寺经幢', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/The_courtyard_of_Quanzhou_Kaiyuan_Temple_20170727.jpg/1280px-The_courtyard_of_Quanzhou_Kaiyuan_Temple_20170727.jpg', time: '09:00-10:00', frame: '用 2 倍镜压缩经幢和屋檐，人物站在石栏外侧回望，画面保留石刻纹样与留白。', outfit: '亚麻白 / 墨绿', warning: '不可触碰石刻或翻越围栏，礼佛高峰优先让行。' },
+      { area: '古城', theme: '骑楼街角', name: '钟楼骑楼转角', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/%E6%B3%89%E5%B7%9E%E9%92%9F%E6%A5%BC.jpg/1280px-%E6%B3%89%E5%B7%9E%E9%92%9F%E6%A5%BC.jpg', time: '蓝调时刻', frame: '站在东街一侧骑楼柱廊下，利用柱子做前景，把钟楼留在转角远处；人物只占画面三分之一。', outfit: '牛仔蓝 / 米白', warning: '全程在人行道和骑楼内取景，不能后退到机动车道。' },
+      { area: '西街', theme: '白墙留白', name: '小西埕白墙', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Xi_Jie_%28West_Street%29%2C_Quanzhou_Aug_2023.jpg/1280px-Xi_Jie_%28West_Street%29%2C_Quanzhou_Aug_2023.jpg', time: '10:00 前 / 16:30 后', frame: '白墙当前景时，人物离墙半步并朝一侧走；用竖构图留出大面积干净墙面，适合半身肖像。', outfit: '红棕 / 深蓝', warning: '白墙附近是公共街区，不要贴海报、攀爬或长时间挡住店铺出入口。' },
+      { area: '西街', theme: '寺院回廊', name: '开元寺回廊', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Quanzhou_Kaiyuan_Temple_-_%E5%A4%A7%E9%9B%84%E5%AE%9D%E6%AE%BF_20170727.jpg/1280px-Quanzhou_Kaiyuan_Temple_-_%E5%A4%A7%E9%9B%84%E5%AE%9D%E6%AE%BF_20170727.jpg', time: '15:00-16:30', frame: '沿回廊斜向取景，让柱列形成引导线；人物走向光处，避免站在正中参拜动线。', outfit: '米色 / 深绿', warning: '以现场开放区域为准，禁止闪光灯，香客经过时停拍让行。' },
+      { area: '中山路', theme: '南洋骑楼', name: '中山南路骑楼', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Xi_Jie_%28West_Street%29%2C_Quanzhou_Aug_2023.jpg/1280px-Xi_Jie_%28West_Street%29%2C_Quanzhou_Aug_2023.jpg', time: '07:30-09:00', frame: '顺着骑楼柱列向南拍，人物靠近一根柱子侧身站，保留路牌、招牌与纵深，不要拍得太满。', outfit: '白衬衫 / 靛蓝', warning: '骑楼仍有居民和商户通行，别占店门、别使用大灯架。' },
+      { area: '中山路', theme: '石墙光影', name: '清净寺外墙', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Quanzhou_Qingjing_Si_20120229-02.jpg/1280px-Quanzhou_Qingjing_Si_20120229-02.jpg', time: '16:00-17:00', frame: '在涂门街人行道侧取石墙斜侧光，用半身侧脸与门洞边缘构图，背景只留一小块天空。', outfit: '黑色 / 亚麻白', warning: '尊重宗教场所与周边商户，不要在出入口聚集、摆拍或大声喧哗。' },
+      { area: '水门巷', theme: '海丝庙宇', name: '天后宫正殿', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Quanzhou_-_Tianhou_Gong_-_DSCF8655.JPG/1280px-Quanzhou_-_Tianhou_Gong_-_DSCF8655.JPG', time: '09:30-10:30', frame: '从前庭偏侧拍入正殿，人物放在台阶下侧，檐角和红柱占主画面；广角不要贴太近。', outfit: '青绿 / 米白', warning: '香火旺时不占中轴，不触碰供桌与建筑构件。' },
+      { area: '水门巷', theme: '古城入口', name: '德济门入口', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/20230129_Remains_of_Deji_Gate_01.jpg/1280px-20230129_Remains_of_Deji_Gate_01.jpg', time: '16:30-17:30', frame: '从入口外侧低机位带入城砖和标识，人物在步道边缓步走，留出遗址尺度感。', outfit: '卡其 / 深绿', warning: '按参观步道行走，不坐、不踩遗址石砖；注意闭馆时间。' },
+      { area: '关岳庙', theme: '涂门街景', name: '涂门街骑楼', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Quanzhou_Tonghuai_Guanyue_Miao_2005-08-11.jpg/1280px-Quanzhou_Tonghuai_Guanyue_Miao_2005-08-11.jpg', time: '08:00-09:00', frame: '在关岳庙外侧骑楼下向街景拍，柱廊作引导线，人物拿一杯饮品边走边拍更自然。', outfit: '深蓝 / 燕麦色', warning: '涂门街车流和电动车多，只在骑楼、人行道内停留。' },
+      { area: '关岳庙', theme: '红墙侧廊', name: '关岳庙红墙侧廊', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Quanzhou_Tonghuai_Guanyue_Miao_20120229-03.jpg/1280px-Quanzhou_Tonghuai_Guanyue_Miao_20120229-03.jpg', time: '阴天全天', frame: '用长焦拍红墙与木构细节，人物沿侧廊慢走，前景留一根廊柱，画面更有层次。', outfit: '黑色 / 酒红', warning: '避开香火和参拜队列，禁止倚靠木构、开启闪光灯。' },
+      { area: '东街', theme: '寺院水景', name: '承天寺放生池', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Quanzhou_Chengtian_Si_20120301-03.jpg/1280px-Quanzhou_Chengtian_Si_20120301-03.jpg', time: '08:30-09:30', frame: '站在池边步道的安全线内，把池水、树影和殿宇分三层放进画面，人物看向水面即可。', outfit: '浅灰 / 青绿', warning: '不投喂、不越过护栏，雨后石板湿滑需慢走。' },
+      { area: '东街', theme: '街口夜色', name: '东街钟楼拐角', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/%E6%B3%89%E5%B7%9E%E9%92%9F%E6%A5%BC.jpg/1280px-%E6%B3%89%E5%B7%9E%E9%92%9F%E6%A5%BC.jpg', time: '日落后 20 分钟', frame: '在东街骑楼内朝钟楼方向拍，利用店招光作为前景，人物停在骑楼柱旁，不要站到路口中央。', outfit: '砖红 / 黑色', warning: '注意红绿灯与电动车，拍完迅速离开路口。' },
+      { area: '蟳埔', theme: '蚝壳纵深', name: '蚝壳巷深处', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Xunpu_Village_5.jpg/1280px-Xunpu_Village_5.jpg', time: '15:30-17:00', frame: '在较宽的巷道转角向深处拍，蚝壳墙作两侧边框；人物离墙一臂距离，避免触碰民居。', outfit: '白色 / 海军蓝', warning: '居民优先，不能进院、推门或把拍摄器材铺在巷道中间。' },
+      { area: '蟳埔', theme: '东海日落', name: '东海港湾日落', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Xunpu_Village_6.jpg/1280px-Xunpu_Village_6.jpg', time: '日落前 45 分钟', frame: '镜头朝海面保留一条地平线，人物站在安全步道内侧剪影式取景；日落后再拍一张蓝调。', outfit: '浅蓝 / 奶油白', warning: '以潮汐和现场封闭提示为准，不下礁石、不靠近渔船和湿滑堤岸。' }
     ];
     const photoLocationByName = {
       '开元寺东西塔': { address: '鲤城区西街 176 号，开元寺内大雄宝殿前庭；从西街正门进后沿中轴直走。', search: '泉州开元寺' },
@@ -351,6 +407,20 @@
       '蟳埔簪花围街巷': { address: '丰泽区东海街道蟳埔社区，蟳埔村入口进村后的簪花与蚝壳厝街巷。', search: '蟳埔村 簪花围' },
       '蚝壳厝墙面': { address: '丰泽区东海街道蟳埔社区，蟳埔村内蚝壳厝聚集巷道；请以住户通行优先。', search: '蟳埔蚝壳厝' },
       '蟳埔渔港巷口': { address: '丰泽区东海街道蟳埔社区南侧海边渔港巷口，从蟳埔村入口步行约 10-15 分钟。', search: '蟳埔渔港' }
+      ,'开元寺经幢': { address: '鲤城区西街 176 号开元寺内，沿大雄宝殿前庭东侧或西侧步道寻找经幢；从西街正门进入后步行约 5 分钟。', search: '泉州开元寺' }
+      ,'钟楼骑楼转角': { address: '鲤城区东街与中山中路交会处的东街骑楼一侧，面向钟楼方向；全程在骑楼及人行道内取景。', search: '泉州钟楼' }
+      ,'小西埕白墙': { address: '鲤城区西街小西埕文创街区内，位于西街中段靠近开元寺方向的白墙与巷口区域。', search: '泉州小西埕' }
+      ,'开元寺回廊': { address: '鲤城区西街 176 号开元寺内，大雄宝殿两侧及前庭相连回廊；从西街正门沿主步道入园。', search: '泉州开元寺' }
+      ,'中山南路骑楼': { address: '鲤城区中山南路涂门街至天后路一段的连续骑楼下，建议从涂门街口向南步行取景。', search: '泉州中山南路' }
+      ,'清净寺外墙': { address: '鲤城区涂门街 108 号清净寺临涂门街一侧石墙与入口周边；站在街道人行道内侧拍摄。', search: '泉州清净寺' }
+      ,'天后宫正殿': { address: '鲤城区天后路 1 号泉州天后宫内，山门进入后沿参观动线至前庭及正殿区域。', search: '泉州天后宫' }
+      ,'德济门入口': { address: '鲤城区天后路 1 号附近德济门遗址参观入口，位于天后宫东南侧，按遗址导视进入。', search: '德济门遗址' }
+      ,'涂门街骑楼': { address: '鲤城区涂门街通淮关岳庙外侧及相邻骑楼段，定位关岳庙后沿涂门街人行道步行。', search: '通淮关岳庙' }
+      ,'关岳庙红墙侧廊': { address: '鲤城区涂门街通淮关岳庙内，正殿两侧非香火主通道的红墙及回廊区域，以现场开放范围为准。', search: '通淮关岳庙' }
+      ,'承天寺放生池': { address: '鲤城区南俊路 36 号承天寺内，入山门后沿庭院步道前往放生池周边安全步道。', search: '泉州承天寺' }
+      ,'东街钟楼拐角': { address: '鲤城区东街与中山中路交会口，东街骑楼朝钟楼方向的转角人行区域。', search: '泉州钟楼' }
+      ,'蚝壳巷深处': { address: '丰泽区东海街道蟳埔社区蟳埔村内，村口向海边方向步行，在蚝壳厝聚集的居民巷道边侧取景。', search: '蟳埔蚝壳厝' }
+      ,'东海港湾日落': { address: '丰泽区东海街道蟳埔社区南侧临海安全步道与渔港外沿，建议从蟳埔村入口步行至海边。', search: '蟳埔渔港' }
     };
     const photoArrivalByName = {
       '开元寺东西塔': '西街 176 号正门入园，沿中轴过大雄宝殿前庭；钟楼步行约 8 分钟。',
@@ -374,6 +444,20 @@
       '蟳埔簪花围街巷': '网约车定位“蟳埔村”，从村口步行入巷；簪花造型店通常集中在入口内侧。',
       '蚝壳厝墙面': '从蟳埔村入口继续往海边方向走，看到居民巷道的蚝壳墙后在边侧取景。',
       '蟳埔渔港巷口': '从蟳埔村入口步行约 10-15 分钟到海边；风大时不要靠近渔船作业区。'
+      ,'开元寺经幢': '西街 176 号正门入寺，沿中轴走到大雄宝殿前庭后转入一侧步道；跟随现场导览，不进封闭区域。'
+      ,'钟楼骑楼转角': '导航“泉州钟楼”至东街口下车，顺东街骑楼向北或向东找柱廊转角；不穿越环岛。'
+      ,'小西埕白墙': '从西街钟楼方向向开元寺步行，见小西埕入口后进入街区内巷；早晨人流更少。'
+      ,'开元寺回廊': '从开元寺西街正门进入，经过大雄宝殿前庭后沿两侧开放回廊步行；香客多时暂停拍摄。'
+      ,'中山南路骑楼': '定位“中山南路”，在涂门街口或天后路口下车后进入骑楼步行，沿街观察光线与人流。'
+      ,'清净寺外墙': '导航“泉州清净寺”，在涂门街一侧人行道下车；拍完石门可向西步行至关岳庙。'
+      ,'天后宫正殿': '导航“泉州天后宫”至天后路山门，入园后依参观动线到前庭；不要逆行或占中轴。'
+      ,'德济门入口': '从天后宫东南侧步行约 2 分钟至德济门遗址导览入口，购票或开放信息以现场为准。'
+      ,'涂门街骑楼': '定位“通淮关岳庙”在庙外人行道下车，沿涂门街骑楼缓慢步行；早高峰后再拍更安全。'
+      ,'关岳庙红墙侧廊': '由关岳庙正门入内，避开正殿香火动线，按现场指示前往两侧开放回廊。'
+      ,'承天寺放生池': '南俊路 36 号山门进入，沿寺内庭院步道前行；池边只在护栏及安全线内取景。'
+      ,'东街钟楼拐角': '从东街向中山中路步行至路口，留在东街骑楼内等蓝调，等灯时不要跨出人行道。'
+      ,'蚝壳巷深处': '网约车定位“蟳埔村”，从村口步行进村再朝海边方向走；巷窄时主动让居民和车辆先行。'
+      ,'东海港湾日落': '定位“蟳埔渔港”后从村口步行约 10-15 分钟抵达临海步道，抵达前先看潮汐、风力和封闭提示。'
     };
     const photoFoodPairingByArea = {
       古城: '拍完去钟楼、府文庙一带吃面线糊、牛肉羹或花生汤。',
