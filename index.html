@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#aa392d">
+  <title>泉州一口｜美食攻略</title>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.js"></script>
+  <style>
+    :root {
+      --paper: #fffaf4;
+      --ink: #1e2d2a;
+      --muted: #65736e;
+      --red: #aa392d;
+      --red-dark: #7d271f;
+      --jade: #286f66;
+      --jade-light: #dbece7;
+      --gold: #e2b46c;
+      --line: #eaded5;
+      --white: #fffdf9;
+      --shadow: 0 16px 44px rgba(58, 44, 33, .12);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; }
+    button { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .shell { min-height: 100vh; overflow: hidden; }
+
+    .topbar { position: absolute; top: 0; right: 0; left: 0; z-index: 5; display: flex; align-items: center; justify-content: space-between; width: min(1180px, calc(100% - 48px)); margin: 0 auto; padding: 24px 0; color: #fffaf4; }
+    .brand { display: flex; align-items: center; gap: 11px; font-family: Georgia, "STKaiti", "KaiTi", serif; font-size: 22px; font-weight: 700; letter-spacing: 1px; }
+    .brand-mark { display: grid; width: 34px; height: 34px; place-items: center; border: 1px solid rgba(255,255,255,.7); border-radius: 50%; font-family: ui-sans-serif, sans-serif; font-size: 13px; }
+    .saved-button { display: inline-flex; align-items: center; gap: 8px; min-height: 38px; padding: 0 12px; border: 1px solid rgba(255,255,255,.65); border-radius: 5px; background: rgba(41, 31, 23, .16); color: #fffaf4; cursor: pointer; font-size: 13px; font-weight: 700; backdrop-filter: blur(10px); }
+    .saved-button svg { width: 16px; height: 16px; }
+
+    .hero { position: relative; display: grid; min-height: 650px; place-items: end start; color: #fffaf4; isolation: isolate; background: #8d3026 url("https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=2000&q=88") center/cover no-repeat; }
+    .hero::before { position: absolute; inset: 0; z-index: -1; content: ""; background: linear-gradient(90deg, rgba(51,19,16,.88) 0%, rgba(61,23,17,.66) 42%, rgba(39,20,13,.2) 100%); }
+    .hero::after { position: absolute; right: -90px; bottom: -90px; z-index: -1; width: 380px; height: 380px; border: 32px solid rgba(255,239,195,.35); border-radius: 50%; content: ""; }
+    .hero-content { width: min(1180px, calc(100% - 48px)); margin: 0 auto; padding: 160px 0 84px; }
+    .eyebrow { display: block; color: #ffdfaa; font-size: 12px; font-weight: 800; letter-spacing: .18em; }
+    h1 { max-width: 680px; margin: 13px 0 0; font-family: Georgia, "STKaiti", "KaiTi", serif; font-size: clamp(56px, 7vw, 92px); font-weight: 700; line-height: .98; letter-spacing: 0; }
+    h1 em { color: #ffdfaa; font-style: normal; }
+    .hero-description { max-width: 405px; margin: 23px 0 0; color: rgba(255,250,244,.88); font-size: 15px; line-height: 1.8; }
+    .hero-details { display: flex; flex-wrap: wrap; gap: 10px 16px; margin-top: 31px; color: #ffead2; font-size: 13px; }
+    .hero-details span { display: inline-flex; align-items: center; gap: 7px; }
+    .hero-details svg { width: 15px; height: 15px; }
+
+    .container { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
+    .route-strip { display: grid; grid-template-columns: minmax(250px, .9fr) 1.7fr auto; align-items: center; gap: 34px; margin-top: -42px; padding: 27px 30px; border: 1px solid #e4d8cb; border-radius: 7px; background: var(--white); box-shadow: var(--shadow); }
+    .route-kicker { color: var(--red); font-size: 12px; font-weight: 800; letter-spacing: .13em; }
+    .route-title { margin-top: 5px; font-size: 25px; font-weight: 800; line-height: 1.15; }
+    .route-subtitle { margin-top: 7px; color: var(--muted); font-size: 13px; }
+    .route-steps { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .route-step { display: grid; gap: 3px; min-width: 0; padding: 0; border: 0; background: transparent; color: inherit; cursor: pointer; font: inherit; text-align: left; }
+    .route-time { color: var(--red); font-size: 12px; font-weight: 800; }
+    .route-food { overflow: hidden; color: var(--ink); font-size: 14px; font-weight: 800; text-overflow: ellipsis; white-space: nowrap; }
+    .route-step small { color: var(--muted); font-size: 11px; }
+    .route-divider { width: 100%; height: 1px; background: #e3d4c7; }
+    .route-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-width: 112px; min-height: 42px; border: 1px solid var(--jade); border-radius: 5px; background: transparent; color: var(--jade); cursor: pointer; font-size: 13px; font-weight: 800; }
+    .route-button:hover { background: var(--jade); color: white; }
+
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-top: 72px; }
+    .section-head .eyebrow { color: var(--red); }
+    h2 { margin: 6px 0 0; color: var(--ink); font-family: Georgia, "STKaiti", "KaiTi", serif; font-size: 37px; line-height: 1; }
+    .count-label { color: var(--muted); font-size: 13px; white-space: nowrap; }
+
+    .filters { display: grid; gap: 14px; margin-top: 28px; }
+    .filter-row { display: flex; align-items: center; gap: 12px; overflow-x: auto; padding-bottom: 2px; scrollbar-width: none; }
+    .filter-row::-webkit-scrollbar { display: none; }
+    .filter-label { flex: none; width: 44px; color: var(--muted); font-size: 12px; font-weight: 800; }
+    .filter-chips { display: flex; gap: 9px; }
+    .filter-chip { flex: none; min-height: 36px; padding: 0 14px; border: 1px solid #d9dfda; border-radius: 5px; background: #fffdf9; color: #5d6c67; cursor: pointer; font-size: 13px; }
+    .filter-chip.active { border-color: var(--jade); background: var(--jade); color: white; font-weight: 800; }
+    .type-row .filter-chip { border-color: #e7d5cb; background: #fff4ed; color: #87594f; }
+    .type-row .filter-chip.active { border-color: var(--red); background: var(--red); color: white; }
+
+    .food-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 17px; margin-top: 29px; }
+    .food-card { position: relative; min-height: 236px; overflow: hidden; padding: 22px; border: 1px solid var(--line); border-radius: 7px; background: var(--white); cursor: pointer; transition: transform .2s ease, box-shadow .2s ease; }
+    .food-card:hover { transform: translateY(-3px); box-shadow: 0 13px 25px rgba(50, 38, 29, .1); }
+    .food-card::after { position: absolute; right: -30px; bottom: -45px; width: 150px; height: 150px; border-radius: 50%; content: ""; opacity: .46; }
+    .food-card.tone-gold::after { background: #ecd2a9; }.food-card.tone-jade::after { background: #b9ddd3; }.food-card.tone-coral::after { background: #f0c5bb; }
+    .food-icon { position: absolute; right: 13px; bottom: 7px; z-index: 1; font-size: 79px; filter: drop-shadow(0 8px 1px rgba(60,30,22,.12)); }
+    .food-top { position: relative; z-index: 2; display: flex; align-items: start; justify-content: space-between; gap: 12px; }
+    .food-area { color: var(--red); font-size: 11px; font-weight: 800; letter-spacing: .12em; }
+    .heart { display: grid; width: 31px; height: 31px; place-items: center; border: 0; border-radius: 5px; background: #f6eee7; color: #8c9b95; cursor: pointer; }
+    .heart:hover, .heart.saved { background: #f7dfd8; color: var(--red); }.heart svg { width: 17px; height: 17px; }
+    .food-name { position: relative; z-index: 2; margin: 30px 0 0; color: var(--ink); font-size: 26px; font-weight: 800; letter-spacing: 0; }
+    .food-copy { position: relative; z-index: 2; max-width: 73%; margin: 9px 0 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
+    .food-bottom { position: absolute; right: 22px; bottom: 19px; left: 22px; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .food-tag { padding: 4px 8px; border-radius: 4px; background: #e8f2ee; color: var(--jade); font-size: 10px; font-weight: 800; }.food-price { color: var(--red); font-size: 13px; font-weight: 800; }
+    .empty-card { grid-column: 1 / -1; padding: 28px; border: 1px dashed #d8c5b8; border-radius: 7px; background: #fffdf9; color: #80665d; font-size: 14px; text-align: center; }
+
+    .notice { display: grid; grid-template-columns: 50px 1fr; gap: 16px; margin: 70px 0 0; padding: 36px 0; border-top: 1px solid #ded4cb; background: transparent; }
+    .notice-number { color: var(--jade); font-size: 18px; font-weight: 800; }.notice h3 { margin: 0; font-size: 20px; }.notice p { max-width: 650px; margin: 8px 0 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
+    .footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 25px 0 40px; color: #7a8781; font-size: 12px; }.footer a { color: var(--jade); text-decoration: none; }
+
+    dialog { width: min(520px, calc(100% - 32px)); padding: 0; border: 0; border-radius: 8px; background: var(--white); box-shadow: 0 26px 80px rgba(35,27,18,.28); }
+    dialog::backdrop { background: rgba(29, 34, 30, .55); backdrop-filter: blur(3px); }.dialog-inner { padding: 32px; }.dialog-close { position: absolute; top: 15px; right: 15px; display: grid; width: 33px; height: 33px; place-items: center; border: 0; border-radius: 5px; background: #f6eee7; color: var(--ink); cursor: pointer; }.dialog-close svg { width: 17px; }.dialog-icon { font-size: 58px; }.dialog-area { margin-top: 12px; color: var(--red); font-size: 11px; font-weight: 800; letter-spacing: .12em; }.dialog-title { margin: 5px 0 0; font-family: Georgia, "STKaiti", "KaiTi", serif; font-size: 41px; }.dialog-intro { margin: 13px 0 0; color: var(--muted); font-size: 14px; line-height: 1.7; }.detail-list { display: grid; gap: 12px; margin-top: 25px; }.detail-row { display: grid; grid-template-columns: 80px 1fr; gap: 12px; padding: 13px 0; border-top: 1px solid var(--line); }.detail-label { color: var(--red); font-size: 12px; font-weight: 800; }.detail-value { color: #40554f; font-size: 13px; line-height: 1.55; }.detail-save { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 46px; margin-top: 24px; border: 0; border-radius: 5px; background: var(--red); color: white; cursor: pointer; font-weight: 800; }.detail-save svg { width: 17px; }
+
+    @media (max-width: 860px) { .route-strip { grid-template-columns: 1fr auto; }.route-steps { grid-column: 1 / -1; }.food-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 620px) { .topbar, .hero-content, .container { width: min(100% - 32px, 1180px); }.topbar { padding: 18px 0; }.brand { font-size: 19px; }.saved-button span { display: none; }.hero { min-height: 600px; }.hero::before { background: linear-gradient(90deg, rgba(51,19,16,.88), rgba(61,23,17,.42)); }.hero-content { padding: 150px 0 62px; }.hero-description { max-width: 340px; }.route-strip { display: block; margin-top: -26px; padding: 23px 20px; }.route-steps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 23px; }.route-divider { display: none; }.route-button { width: 100%; margin-top: 21px; }.section-head { margin-top: 55px; } h2 { font-size: 33px; }.food-grid { grid-template-columns: 1fr; gap: 12px; }.food-card { min-height: 205px; }.food-copy { max-width: 76%; }.notice { margin-top: 46px; }.footer { display: block; }.footer p + p { margin-top: 8px; } }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <nav class="topbar" aria-label="页面导航">
+      <div class="brand"><span class="brand-mark">泉</span>泉州一口</div>
+      <button class="saved-button" id="saved-toggle" title="只看收藏" aria-label="只看收藏"><i data-lucide="heart"></i><span>收藏 <b id="saved-count">0</b></span></button>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">QUANZHOU FOOD WALK · 2026</span>
+        <h1>一日吃懂<br><em>闽南胃</em></h1>
+        <p class="hero-description">从一碗热乎的面线糊开始，在西街转个弯，把海味、甜口和烟火气都装进今天。</p>
+        <div class="hero-details"><span><i data-lucide="map-pin"></i>西街 · 中山路 · 水门巷</span><span><i data-lucide="footprints"></i>步行约 4 公里</span></div>
+      </div>
+    </section>
+
+    <div class="container">
+      <section class="route-strip" aria-label="一日路线">
+        <div><div class="route-kicker">今天不知道怎么吃？</div><div class="route-title">照着一日路线吃</div><div class="route-subtitle">4 站 · 先小吃，晚餐留胃</div></div>
+        <div class="route-steps" id="route-steps"></div>
+        <button class="route-button" id="route-button">查看路线 <i data-lucide="arrow-down"></i></button>
+      </section>
+
+      <section aria-labelledby="find-food-title">
+        <div class="section-head"><div><span class="eyebrow">按区域找吃的</span><h2 id="find-food-title">离你近的那一口</h2></div><span class="count-label" id="food-count"></span></div>
+        <div class="filters">
+          <div class="filter-row"><span class="filter-label">区域</span><div class="filter-chips" id="area-filters"></div></div>
+          <div class="filter-row type-row"><span class="filter-label">类型</span><div class="filter-chips" id="type-filters"></div></div>
+        </div>
+        <div class="food-grid" id="food-grid"></div>
+      </section>
+
+      <section class="notice"><div class="notice-number">01</div><div><h3>别把胃留给排队</h3><p>热门店铺的营业、排队与食材情况会变动，出发前用地图确认。一餐安排两样主食就够了，想尝的多就分着吃。</p></div></section>
+      <footer class="footer"><p>泉州一口 · 为古城漫游准备的实用食物清单</p><p>提示：土笋冻、海蛎煎等含海鲜，点单前留意忌口。</p></footer>
+    </div>
+  </main>
+
+  <dialog id="food-dialog"><div class="dialog-inner"><button class="dialog-close" id="dialog-close" title="关闭" aria-label="关闭"><i data-lucide="x"></i></button><div class="dialog-icon" id="dialog-icon"></div><div class="dialog-area" id="dialog-area"></div><h2 class="dialog-title" id="dialog-title"></h2><p class="dialog-intro" id="dialog-intro"></p><div class="detail-list"><div class="detail-row"><div class="detail-label">这么点最稳</div><div class="detail-value" id="dialog-order"></div></div><div class="detail-row"><div class="detail-label">吃法提醒</div><div class="detail-value" id="dialog-tip"></div></div><div class="detail-row"><div class="detail-label">忌口提示</div><div class="detail-value" id="dialog-warning"></div></div></div><button class="detail-save" id="dialog-save"><i data-lucide="heart"></i><span>收藏这家</span></button></div></dialog>
+
+  <script>
+    const foods = [
+      { id: 'mienxianhu', name: '面线糊', emoji: '🥣', area: '古城', type: '早餐', price: '¥8-16', time: '08:00', intro: '细面线熬进鲜甜汤底，油条和醋肉是灵魂搭配。', tag: '本地早餐', order: '面线糊 + 油条 + 醋肉', tip: '先点小碗，留胃给后面的肉粽。', warning: '汤底和配料常含海鲜、猪肉。', tone: 'gold' },
+      { id: 'rouzong', name: '烧肉粽', emoji: '🍙', area: '中山路', type: '主食', price: '¥12-28', time: '11:30', intro: '糯米包着香菇、猪肉与板栗，蘸花生酱更有闽南味。', tag: '招牌主食', order: '烧肉粽 + 贡糖花生酱', tip: '一个分着吃刚好，单人别再加太多主食。', warning: '含糯米、花生和猪肉，肠胃敏感者适量。', tone: 'jade' },
+      { id: 'hailijian', name: '海蛎煎', emoji: '🦪', area: '西街', type: '小吃', price: '¥18-32', time: '12:30', intro: '蚵仔鲜、地瓜粉香，边缘煎得焦脆才算到位。', tag: '现煎海味', order: '海蛎煎 + 蒜蓉甜辣酱', tip: '可以要求“煎脆一点”，口感会更好。', warning: '贝类过敏者不要尝试。', tone: 'coral' },
+      { id: 'jiangmuya', name: '姜母鸭', emoji: '🦆', area: '水门巷', type: '正餐', price: '¥68-128', time: '18:30', intro: '老姜、麻油和米酒慢煨的厚重香气，适合晚风里慢慢吃。', tag: '晚餐首选', order: '姜母鸭 + 炒青菜 + 米饭', tip: '两人点半只，再配一份青菜最舒服。', warning: '酒香和姜味明显，不适合完全不吃姜的人。', tone: 'jade' },
+      { id: 'siguotang', name: '四果汤', emoji: '🍧', area: '关岳庙', type: '甜品', price: '¥8-18', time: '15:00', intro: '石花、阿达子和蜜饯装进清甜冰汤，是逛古城的降温答案。', tag: '清爽甜口', order: '石花 + 阿达子 + 红豆，少糖', tip: '第一次选少糖，能更清楚吃到食材味道。', warning: '糖分不低，可选择少糖或不加蜜饯。', tone: 'gold' },
+      { id: 'tusundong', name: '土笋冻', emoji: '🧊', area: '东街', type: '小吃', price: '¥10-20', time: '16:00', intro: '晶莹的海味小冻，蒜蓉、芥末和甜辣酱决定它的冲击力。', tag: '挑战味蕾', order: '土笋冻小份 + 蒜蓉醋汁', tip: '第一次从一小份开始，蘸料少加一点。', warning: '原料为海洋沙虫，介意者可跳过。', tone: 'coral' }
+    ];
+    const route = [
+      ['08:00', '面线糊', 'mienxianhu'], ['11:30', '烧肉粽', 'rouzong'], ['15:00', '四果汤', 'siguotang'], ['18:30', '姜母鸭', 'jiangmuya']
+    ];
+    const areas = ['全部', '古城', '西街', '中山路', '水门巷', '关岳庙', '东街'];
+    const types = ['全部', '早餐', '主食', '小吃', '正餐', '甜品'];
+    const state = { area: '全部', type: '全部', savedOnly: false, dialogId: null, saved: new Set(JSON.parse(localStorage.getItem('quanzhou-food-saved') || '[]')) };
+
+    const $ = (selector) => document.querySelector(selector);
+    const icon = () => window.lucide && window.lucide.createIcons();
+    const persist = () => localStorage.setItem('quanzhou-food-saved', JSON.stringify([...state.saved]));
+    const visibleFoods = () => foods.filter((food) => (state.area === '全部' || food.area === state.area) && (state.type === '全部' || food.type === state.type) && (!state.savedOnly || state.saved.has(food.id)));
+
+    function renderFilters() {
+      $('#area-filters').innerHTML = areas.map((item) => `<button class="filter-chip ${state.area === item ? 'active' : ''}" data-area="${item}">${item}</button>`).join('');
+      $('#type-filters').innerHTML = types.map((item) => `<button class="filter-chip ${state.type === item ? 'active' : ''}" data-type="${item}">${item}</button>`).join('');
+      document.querySelectorAll('[data-area]').forEach((button) => button.addEventListener('click', () => { state.area = button.dataset.area; render(); }));
+      document.querySelectorAll('[data-type]').forEach((button) => button.addEventListener('click', () => { state.type = button.dataset.type; render(); }));
+    }
+
+    function renderFoods() {
+      const data = visibleFoods();
+      $('#food-count').textContent = state.savedOnly ? `已收藏 ${data.length} 家` : `${data.length} 家推荐`;
+      $('#food-grid').innerHTML = data.length ? data.map((food) => `<article class="food-card tone-${food.tone}" data-open="${food.id}"><div class="food-top"><span class="food-area">${food.area} · ${food.type}</span><button class="heart ${state.saved.has(food.id) ? 'saved' : ''}" data-save="${food.id}" title="${state.saved.has(food.id) ? '取消收藏' : '收藏'}" aria-label="${state.saved.has(food.id) ? '取消收藏' : '收藏'}"><i data-lucide="heart"></i></button></div><div class="food-name">${food.name}</div><p class="food-copy">${food.intro}</p><div class="food-bottom"><span class="food-tag">${food.tag}</span><span class="food-price">${food.price}</span></div><div class="food-icon">${food.emoji}</div></article>`).join('') : '<div class="empty-card">这里还没有收藏，点击菜品右上角的心形按钮试试。</div>';
+      document.querySelectorAll('[data-save]').forEach((button) => button.addEventListener('click', (event) => { event.stopPropagation(); toggleSave(button.dataset.save); }));
+      document.querySelectorAll('[data-open]').forEach((card) => card.addEventListener('click', () => openDialog(card.dataset.open)));
+    }
+
+    function renderRoute() {
+      $('#route-steps').innerHTML = route.map(([time, name, id], index) => `<button class="route-step" data-route="${id}"><span class="route-time">${time}</span><span class="route-food">${name}</span><small>${index === 0 ? '暖胃开场' : index === 3 ? '正式晚餐' : '边走边吃'}</small></button>${index < route.length - 1 ? '<span class="route-divider"></span>' : ''}`).join('');
+      document.querySelectorAll('[data-route]').forEach((button) => button.addEventListener('click', () => openDialog(button.dataset.route)));
+    }
+
+    function renderSaved() {
+      $('#saved-count').textContent = state.saved.size;
+      $('#saved-toggle').classList.toggle('active', state.savedOnly);
+      $('#saved-toggle').setAttribute('aria-pressed', state.savedOnly);
+    }
+
+    function render() { renderFilters(); renderFoods(); renderRoute(); renderSaved(); icon(); }
+
+    function toggleSave(id) {
+      if (state.saved.has(id)) state.saved.delete(id); else state.saved.add(id);
+      persist(); render();
+      if (state.dialogId === id) updateDialogButton();
+    }
+
+    function openDialog(id) {
+      const food = foods.find((item) => item.id === id);
+      state.dialogId = id;
+      $('#dialog-icon').textContent = food.emoji;
+      $('#dialog-area').textContent = `${food.area} · ${food.type} · ${food.price}`;
+      $('#dialog-title').textContent = food.name;
+      $('#dialog-intro').textContent = food.intro;
+      $('#dialog-order').textContent = food.order;
+      $('#dialog-tip').textContent = food.tip;
+      $('#dialog-warning').textContent = food.warning;
+      updateDialogButton();
+      $('#food-dialog').showModal(); icon();
+    }
+
+    function updateDialogButton() {
+      const saved = state.saved.has(state.dialogId);
+      $('#dialog-save span').textContent = saved ? '已收藏' : '收藏这家';
+      $('#dialog-save').setAttribute('aria-label', saved ? '取消收藏' : '收藏这家');
+    }
+
+    $('#saved-toggle').addEventListener('click', () => { state.savedOnly = !state.savedOnly; render(); });
+    $('#route-button').addEventListener('click', () => { document.querySelector('#find-food-title').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+    $('#dialog-close').addEventListener('click', () => $('#food-dialog').close());
+    $('#dialog-save').addEventListener('click', () => toggleSave(state.dialogId));
+    $('#food-dialog').addEventListener('click', (event) => { if (event.target === $('#food-dialog')) $('#food-dialog').close(); });
+    render();
+  </script>
+</body>
+</html>
